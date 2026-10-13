@@ -5,7 +5,10 @@
 
 module add gcc/13.2.1
 
-gcc -Ofast main.c common/common.c configuration/config.c layer/layer.c randomizer/randomizer.c initialize/initialize.c training/training.c -o exec -lm 
+gcc -Ofast -fopenmp main.c common/common.c configuration/config.c layer/layer.c randomizer/randomizer.c initialize/initialize.c training/training.c -o exec -lm
 
+echo "Compiló wei"
 ## perf stat ./exec configuration/configfile.txt
-./exec configuration/configfile.txt
+perf stat ./exec configuration/configfile.txt
+
+rm ./exec

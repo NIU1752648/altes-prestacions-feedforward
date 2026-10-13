@@ -1,3 +1,4 @@
+Compiled! Running
 
 Training...
 Epoch 0 Loss: 0.363908
@@ -13,8 +14,9 @@ Epoch 9 Loss: 0.011011
 
 Testing...
 
-Total encerts = 929 (/946) 
+Total encerts = 929 (/946)
 
 
-Goodbye! (40.380158 sec)
+Goodbye! (40.288796 sec)
 
+Done!

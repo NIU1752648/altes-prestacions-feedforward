@@ -17,7 +17,7 @@
 
 #include <math.h>
 #include <stdio.h>
-
+#include <omp.h>
 
 /**
  * @brief Inicialitza la capa incial de la xarxa (input layer) amb l'entrada
@@ -35,14 +35,21 @@ void feed_input(int i) {
  * variació de bias (dbias) de totes les capes.
  *
  * @param Això cal fer-ho per cada batch, així es poden acumular les variacions
- * per tots els patrons del batch i aplicar-les a l'acabar de processar tot el 
+ * per tots els patrons del batch i aplicar-les a l'acabar de processar tot el
  * batch.
  **/
+
+
 void init_deltas() {
-    for (int i = 0; i < num_layers - 1; i++) {
-        for (int j = 0; j < num_neurons[i]; j++) 
+    int i, j;
+    #pragma omp parallel private(i, j)
+    for (i = 0; i < num_layers - 1; i++) {
+        #pragma omp for schedule(static)
+        for (j = 0; j < num_neurons[i]; j++)
             lay[i].dbias[j] = 0.0;
-        for (int j = 0; j < num_neurons[i + 1] * num_neurons[i]; j++) 
+
+        #pragma omp for schedule(static)
+        for (j = 0; j < num_neurons[i + 1] * num_neurons[i]; j++)
             lay[i].dw[j] = 0.0;
     }
 }
@@ -66,9 +73,12 @@ void init_deltas() {
  * funció Sigmoid si es tracte de la capa de sortida.
  *
  */
+
+// PARALELELEL
 void forward_prop() {
     for (int i = 1; i < num_layers; i++) {
         if (debug == 1) printf("Valors activació capa %d \n", i);
+        #pragma omp parallel for schedule(static)
         for (int j = 0; j < num_neurons[i]; j++) {
             lay[i].z[j] = lay[i].bias[j];
             for (int k = 0; k < num_neurons[i - 1]; k++)
@@ -85,16 +95,16 @@ void forward_prop() {
     }
 }
 
-/** 
- * @brief Calcula la funció de perdua per cada patró i l'acumulat fins el punt actual 
+/**
+ * @brief Calcula la funció de perdua per cada patró i l'acumulat fins el punt actual
  * d'entrenament
- * 
- * @details La funció de pèrdua (loss function) en l'entrenament 
- * d'una xarxa neuronal multivivell és essencialment una mesura de com de malament li 
- * va a la xarxa per realitzar la tasca per a la qual està sent entrenada, donades les 
+ *
+ * @details La funció de pèrdua (loss function) en l'entrenament
+ * d'una xarxa neuronal multivivell és essencialment una mesura de com de malament li
+ * va a la xarxa per realitzar la tasca per a la qual està sent entrenada, donades les
  * seves sortides actuals en comparació amb les sortides desitjades (ground truth).
  * Fem servir la funció de loss Entropia Creuada Binària (Binary Cross-Entropy o Log Loss)
- * que s'utilitza per a problemes de classificació quan la capa de sortida fa servir una 
+ * que s'utilitza per a problemes de classificació quan la capa de sortida fa servir una
  * funció d'activació sigmoide.
 */
 float compute_loss(int i) {
@@ -130,9 +140,10 @@ float compute_loss(int i) {
  * (input layer) que és coneguda (imatge d'entrada).
  *
  */
+// PARALELELELE
 void back_prop(int p) {
     // Output Layer
-    for (int k = 0; k < num_neurons[num_layers - 2]; k++) 
+    for (int k = 0; k < num_neurons[num_layers - 2]; k++)
         lay[num_layers - 2].dactv[k] = 0;
 
     for (int j = 0; j < num_neurons[num_layers - 1]; j++) {
@@ -146,7 +157,7 @@ void back_prop(int p) {
         for (int k = 0; k < num_neurons[num_layers - 2]; k++) {
             lay[num_layers - 2].dw[j * num_neurons[num_layers - 2] + k] +=
                 (lay[num_layers - 1].dz[j] * lay[num_layers - 2].actv[k]);
-            lay[num_layers - 2].dactv[k] +=          
+            lay[num_layers - 2].dactv[k] +=
                 lay[num_layers - 2].out_weights[j * num_neurons[num_layers - 2] + k] *
                 lay[num_layers - 1].dz[j];
         }
@@ -154,10 +165,14 @@ void back_prop(int p) {
 
     // Hidden Layers
     for (int i = num_layers - 2; i > 0; i--) {
+        float *dactv_previous = lay[i - 1].dactv;
+        int n_previous = num_neurons[i - 1];
+
         if ( i > 1 )
             for (int k = 0; k < num_neurons[i - 1]; k++)
                 lay[i - 1].dactv[k] = 0;
 
+        #pragma omp parallel for schedule(static) reduction(+: dactv_previous[:n_previous])
         for (int j = 0; j < num_neurons[i]; j++) {
             lay[i].dz[j] = (lay[i].z[j] >= 0) ? lay[i].dactv[j] : 0;
 
@@ -166,7 +181,7 @@ void back_prop(int p) {
                     lay[i].dz[j] * lay[i - 1].actv[k];
 
                 if (i > 1)
-                    lay[i - 1].dactv[k] +=
+                    dactv_previous[k] +=
                         lay[i - 1].out_weights[j * num_neurons[i - 1] + k] *
                         lay[i].dz[j];
             }
