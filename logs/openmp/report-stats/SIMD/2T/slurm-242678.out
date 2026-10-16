@@ -1,0 +1,43 @@
+Compiló wei
+
+Training...
+Epoch 0 Loss: 0.364049
+Epoch 1 Loss: 0.312669
+Epoch 2 Loss: 0.133363
+Epoch 3 Loss: 0.062590
+Epoch 4 Loss: 0.042715
+Epoch 5 Loss: 0.026587
+Epoch 6 Loss: 0.021664
+Epoch 7 Loss: 0.016668
+Epoch 8 Loss: 0.012708
+Epoch 9 Loss: 0.011031
+
+Testing...
+
+Total encerts = 929 (/946) 
+
+
+Goodbye! (15.841957 sec)
+
+
+ Performance counter stats for './exec2 configuration/configfile.txt':
+
+         31.707,09 msec task-clock:u              #    1,993 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+             7.830      page-faults:u             #  246,948 /sec                   
+    80.815.524.176      cycles:u                  #    2,549 GHz                      (66,68%)
+       535.634.673      stalled-cycles-frontend:u #    0,66% frontend cycles idle     (66,67%)
+    26.956.533.638      stalled-cycles-backend:u  #   33,36% backend cycles idle      (66,66%)
+   109.192.244.518      instructions:u            #    1,35  insn per cycle         
+                                                  #    0,25  stalled cycles per insn  (66,66%)
+    14.643.852.325      branches:u                #  461,848 M/sec                    (66,66%)
+        45.152.282      branch-misses:u           #    0,31% of all branches          (66,67%)
+
+      15,909861294 seconds time elapsed
+
+      31,138372000 seconds user
+       0,065799000 seconds sys
+
+
+rm: no se puede borrar './exec2': No existe el fichero o el directorio

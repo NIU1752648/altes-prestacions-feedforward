@@ -1,0 +1,43 @@
+Compiló wei
+
+Training...
+Epoch 0 Loss: 0.363880
+Epoch 1 Loss: 0.360613
+Epoch 2 Loss: 0.130510
+Epoch 3 Loss: 0.056554
+Epoch 4 Loss: 0.041455
+Epoch 5 Loss: 0.025889
+Epoch 6 Loss: 0.022247
+Epoch 7 Loss: 0.016154
+Epoch 8 Loss: 0.012473
+Epoch 9 Loss: 0.010878
+
+Testing...
+
+Total encerts = 929 (/946) 
+
+
+Goodbye! (8.072814 sec)
+
+
+ Performance counter stats for './exec5 configuration/configfile.txt':
+
+         32.263,80 msec task-clock:u                     #    3,964 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+             7.632      page-faults:u                    #  236,550 /sec                      
+    82.487.322.078      cycles:u                         #    2,557 GHz                         (66,66%)
+       859.246.738      stalled-cycles-frontend:u        #    1,04% frontend cycles idle        (66,67%)
+    26.555.385.230      stalled-cycles-backend:u         #   32,19% backend cycles idle         (66,68%)
+   111.236.665.424      instructions:u                   #    1,35  insn per cycle            
+                                                  #    0,24  stalled cycles per insn     (66,67%)
+    15.241.548.395      branches:u                       #  472,404 M/sec                       (66,66%)
+        46.743.493      branch-misses:u                  #    0,31% of all branches             (66,66%)
+
+       8,138405789 seconds time elapsed
+
+      31,750510000 seconds user
+       0,086699000 seconds sys
+
+
+rm: no se puede borrar './exec5': No existe el fichero o el directorio

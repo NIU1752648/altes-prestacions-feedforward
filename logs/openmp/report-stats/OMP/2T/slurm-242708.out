@@ -1,0 +1,43 @@
+Compiló wei
+
+Training...
+Epoch 0 Loss: 0.363881
+Epoch 1 Loss: 0.353079
+Epoch 2 Loss: 0.137827
+Epoch 3 Loss: 0.070555
+Epoch 4 Loss: 0.040844
+Epoch 5 Loss: 0.025924
+Epoch 6 Loss: 0.023539
+Epoch 7 Loss: 0.016224
+Epoch 8 Loss: 0.012639
+Epoch 9 Loss: 0.010888
+
+Testing...
+
+Total encerts = 929 (/946) 
+
+
+Goodbye! (16.021619 sec)
+
+
+ Performance counter stats for './exec4 configuration/configfile.txt':
+
+         32.068,23 msec task-clock:u              #    1,993 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+            11.205      page-faults:u             #  349,411 /sec                   
+    81.771.498.977      cycles:u                  #    2,550 GHz                      (66,65%)
+       563.738.432      stalled-cycles-frontend:u #    0,69% frontend cycles idle     (66,68%)
+    27.320.937.448      stalled-cycles-backend:u  #   33,41% backend cycles idle      (66,68%)
+   109.715.348.207      instructions:u            #    1,34  insn per cycle         
+                                                  #    0,25  stalled cycles per insn  (66,66%)
+    14.736.469.331      branches:u                #  459,535 M/sec                    (66,67%)
+        45.225.660      branch-misses:u           #    0,31% of all branches          (66,66%)
+
+      16,088951961 seconds time elapsed
+
+      31,496026000 seconds user
+       0,079751000 seconds sys
+
+
+rm: no se puede borrar './exec4': No existe el fichero o el directorio

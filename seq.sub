@@ -10,12 +10,12 @@ export OMP_PLACES=cores
 
 module add gcc/13.2.1
 
-gcc -Ofast -fopenmp -march=native -fno-tree-vectorize main.c common/common.c configuration/config.c layer/layer.c randomizer/randomizer.c initialize/initialize.c training/training.c -o exec -lm
+gcc -Ofast -fopenmp -march=native -fno-tree-vectorize main.c common/common.c configuration/config.c layer/layer.c randomizer/randomizer.c initialize/initialize.c training/training.c -o exec$1 -lm
 
 echo "Compiló wei"
 
-export OMP_NUM_THREADS=2
+export OMP_NUM_THREADS=${2}
 
-perf stat ./exec configuration/configfile.txt
+perf stat ./exec$1 configuration/configfile.txt
 
-rm ./exec
+rm ./exec$1

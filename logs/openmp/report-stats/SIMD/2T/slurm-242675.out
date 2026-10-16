@@ -1,0 +1,43 @@
+Compiló wei
+
+Training...
+Epoch 0 Loss: 0.364049
+Epoch 1 Loss: 0.312669
+Epoch 2 Loss: 0.133363
+Epoch 3 Loss: 0.062590
+Epoch 4 Loss: 0.042715
+Epoch 5 Loss: 0.026587
+Epoch 6 Loss: 0.021664
+Epoch 7 Loss: 0.016668
+Epoch 8 Loss: 0.012708
+Epoch 9 Loss: 0.011031
+
+Testing...
+
+Total encerts = 929 (/946) 
+
+
+Goodbye! (15.602347 sec)
+
+
+ Performance counter stats for './exec1 configuration/configfile.txt':
+
+         31.229,69 msec task-clock:u                     #    1,993 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+             8.696      page-faults:u                    #  278,453 /sec                      
+    79.688.748.439      cycles:u                         #    2,552 GHz                         (66,66%)
+       539.337.367      stalled-cycles-frontend:u        #    0,68% frontend cycles idle        (66,65%)
+    25.828.355.832      stalled-cycles-backend:u         #   32,41% backend cycles idle         (66,66%)
+   109.220.192.292      instructions:u                   #    1,37  insn per cycle            
+                                                  #    0,24  stalled cycles per insn     (66,67%)
+    14.639.719.154      branches:u                       #  468,776 M/sec                       (66,68%)
+        45.126.874      branch-misses:u                  #    0,31% of all branches             (66,67%)
+
+      15,667106495 seconds time elapsed
+
+      30,693972000 seconds user
+       0,078694000 seconds sys
+
+
+rm: no se puede borrar './exec1': No existe el fichero o el directorio

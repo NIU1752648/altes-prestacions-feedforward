@@ -1,0 +1,43 @@
+Compiló wei
+
+Training...
+Epoch 0 Loss: 0.364054
+Epoch 1 Loss: 0.311845
+Epoch 2 Loss: 0.132412
+Epoch 3 Loss: 0.073076
+Epoch 4 Loss: 0.038440
+Epoch 5 Loss: 0.025811
+Epoch 6 Loss: 0.021634
+Epoch 7 Loss: 0.016443
+Epoch 8 Loss: 0.012610
+Epoch 9 Loss: 0.011178
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (8.075116 sec)
+
+
+ Performance counter stats for './exec3 configuration/configfile.txt':
+
+         32.218,41 msec task-clock:u                     #    3,958 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+             7.629      page-faults:u                    #  236,790 /sec                      
+    82.409.609.711      cycles:u                         #    2,558 GHz                         (50,01%)
+       856.350.401      stalled-cycles-frontend:u        #    1,04% frontend cycles idle        (49,99%)
+    26.536.570.973      stalled-cycles-backend:u         #   32,20% backend cycles idle         (50,00%)
+   111.332.059.825      instructions:u                   #    1,35  insn per cycle            
+                                                  #    0,24  stalled cycles per insn     (49,99%)
+    15.219.163.761      branches:u                       #  472,375 M/sec                       (50,01%)
+        46.491.866      branch-misses:u                  #    0,31% of all branches             (50,01%)
+
+       8,140353488 seconds time elapsed
+
+      31,743143000 seconds user
+       0,080788000 seconds sys
+
+
+rm: no se puede borrar './exec3': No existe el fichero o el directorio

@@ -1,0 +1,42 @@
+Compiló wei
+
+Training...
+Epoch 0 Loss: 0.363937
+Epoch 1 Loss: 0.331751
+Epoch 2 Loss: 0.301923
+Epoch 3 Loss: 0.173929
+Epoch 4 Loss: 0.136739
+Epoch 5 Loss: 0.107805
+Epoch 6 Loss: 0.108523
+Epoch 7 Loss: 0.103980
+Epoch 8 Loss: 0.101949
+Epoch 9 Loss: 0.103571
+
+Testing...
+
+Total encerts = 823 (/946) 
+
+
+Goodbye! (5.787089 sec)
+
+
+ Performance counter stats for './exec3 configuration/configfile.txt':
+
+         34.624,17 msec task-clock:u                     #    5,916 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+             5.839      page-faults:u                    #  168,639 /sec                      
+    88.606.038.956      cycles:u                         #    2,559 GHz                         (50,00%)
+     1.364.725.828      stalled-cycles-frontend:u        #    1,54% frontend cycles idle        (50,01%)
+    29.587.249.982      stalled-cycles-backend:u         #   33,39% backend cycles idle         (50,01%)
+   114.520.173.834      instructions:u                   #    1,29  insn per cycle            
+                                                  #    0,26  stalled cycles per insn     (50,00%)
+    16.174.510.604      branches:u                       #  467,145 M/sec                       (50,00%)
+        48.306.149      branch-misses:u                  #    0,30% of all branches             (50,00%)
+
+       5,852252884 seconds time elapsed
+
+      34,119055000 seconds user
+       0,087750000 seconds sys
+
+
