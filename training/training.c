@@ -76,19 +76,24 @@ void init_deltas() {
 
 // PARALELELEL
 void forward_prop() {
+    #pragma omp parallel
     for (int i = 1; i < num_layers; i++) {
+        const int n_previous = num_neurons[i - 1];
+        const float *actv_previous = lay[i - 1].actv;
+        const float *w = lay[i - 1].out_weights;
+
         if (debug == 1) printf("Valors activació capa %d \n", i);
-        #pragma omp parallel for schedule(static)
+
+        #pragma omp for schedule(static)
         for (int j = 0; j < num_neurons[i]; j++) {
-            lay[i].z[j] = lay[i].bias[j];
-            for (int k = 0; k < num_neurons[i - 1]; k++)
-                lay[i].z[j] +=
-                    ((lay[i - 1].out_weights[j * num_neurons[i - 1] + k]) *
-                     (lay[i - 1].actv[k]));
-            if (i < num_layers - 1)  // Relu Activation Function for Hidden Layers
-                lay[i].actv[j] = ((lay[i].z[j]) < 0) ? 0 : lay[i].z[j];
-            else  // Sigmoid Activation Function for Output Layer
-                lay[i].actv[j] = 1 / (1 + exp(-lay[i].z[j]));
+            const float *w_row = &w[j * n_previous];
+            float sum = lay[i].bias[j];
+            #pragma omp simd reduction(+:sum)
+            for (int k = 0; k < n_previous; k++)
+                sum += w_row[k] * actv_previous[k];
+            lay[i].z[j] = sum;
+            if (i < num_layers - 1) lay[i].actv[j] = (sum < 0) ? 0 : sum;
+            else lay[i].actv[j] = 1 / (1 + exp(-sum));
             if (debug == 1) printf("%f %f ", lay[i].actv[j], lay[i].z[j]);
         }
         if (debug == 1) printf("\n\n");
@@ -198,13 +203,16 @@ void back_prop(int p) {
  * @see back_prop
  */
 void update_weights(void) {
+    #pragma omp parallel
     for (int i = 0; i < num_layers - 1; i++) {
+        #pragma omp for collapse(2) schedule(static)
         for (int j = 0; j < num_neurons[i + 1]; j++)
             for (int k = 0; k < num_neurons[i]; k++)  // Update Weights
                 lay[i].out_weights[j * num_neurons[i] + k] =
                     (lay[i].out_weights[j * num_neurons[i] + k]) -
                     (alpha * lay[i].dw[j * num_neurons[i] + k]);
 
+        #pragma omp for schedule(static)
         for (int j = 0; j < num_neurons[i]; j++)  // Update Bias
             lay[i].bias[j] = lay[i].bias[j] - (alpha * lay[i].dbias[j]);
     }
