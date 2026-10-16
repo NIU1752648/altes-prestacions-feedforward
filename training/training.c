@@ -215,9 +215,12 @@ void back_prop(int p) {
  *
  * @see back_prop
  */
+
 void update_weights(void) {
+
     #pragma omp parallel
     for (int i = 0; i < num_layers - 1; i++) {
+
         #pragma omp for collapse(2) schedule(static)
         for (int j = 0; j < num_neurons[i + 1]; j++)
             for (int k = 0; k < num_neurons[i]; k++)  // Update Weights
