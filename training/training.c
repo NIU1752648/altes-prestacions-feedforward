@@ -169,30 +169,43 @@ void back_prop(int p) {
     }
 
     // Hidden Layers
-    for (int i = num_layers - 2; i > 0; i--) {
+    for (int i = num_layers - 2; i > 1; i--) {
         float *dactv_previous = lay[i - 1].dactv;
-        int n_previous = num_neurons[i - 1];
+        const int n_previous = num_neurons[i - 1];
+        const float *actv_previous = lay[i - 1].actv;
 
-        if ( i > 1 )
-            for (int k = 0; k < num_neurons[i - 1]; k++)
-                lay[i - 1].dactv[k] = 0;
+        for (int k = 0; k < n_previous; k++)
+                dactv_previous[k] = 0;
 
         #pragma omp parallel for schedule(static) reduction(+: dactv_previous[:n_previous])
         for (int j = 0; j < num_neurons[i]; j++) {
-            lay[i].dz[j] = (lay[i].z[j] >= 0) ? lay[i].dactv[j] : 0;
-
-            for (int k = 0; k < num_neurons[i - 1]; k++) {
-                lay[i - 1].dw[j * num_neurons[i - 1] + k] +=
-                    lay[i].dz[j] * lay[i - 1].actv[k];
-
-                if (i > 1)
-                    dactv_previous[k] +=
-                        lay[i - 1].out_weights[j * num_neurons[i - 1] + k] *
-                        lay[i].dz[j];
+            const float dz = (lay[i].z[j] >= 0) ? lay[i].dactv[j] : 0;
+            float *dw_row = &lay[i - 1].dw[j * n_previous];
+            const float *w_row = &lay[i - 1].out_weights[j * n_previous];
+            lay[i].dz[j] = dz;
+            #pragma omp simd
+            for (int k = 0; k < n_previous; k++) {
+                dw_row[k] += dz * actv_previous[k];
+                dactv_previous[k] += w_row[k] * dz;
             }
-            lay[i].dbias[j] += lay[i].dz[j];
+            lay[i].dbias[j] += dz;
         }
     }
+    {
+            const int n_previous = num_neurons[0];
+            const float *actv_previous = lay[0].actv;
+
+            #pragma omp parallel for schedule(static)
+            for (int j = 0; j < num_neurons[1]; j++) {
+                const float dz = (lay[1].z[j] >= 0) ? lay[1].dactv[j] : 0;
+                float *dw_row = &lay[0].dw[j * n_previous];
+                lay[1].dz[j] = dz;
+                #pragma omp simd
+                for (int k = 0; k < n_previous; k++)
+                    dw_row[k] += dz * actv_previous[k];
+                lay[1].dbias[j] += dz;
+            }
+        }
 }
 
 /**
