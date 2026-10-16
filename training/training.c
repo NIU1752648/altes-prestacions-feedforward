@@ -197,14 +197,20 @@ void back_prop(int p) {
  *
  * @see back_prop
  */
+
 void update_weights(void) {
+
+    #pragma omp parallel
     for (int i = 0; i < num_layers - 1; i++) {
+
+        #pragma omp for collapse(2) schedule(static)
         for (int j = 0; j < num_neurons[i + 1]; j++)
             for (int k = 0; k < num_neurons[i]; k++)  // Update Weights
                 lay[i].out_weights[j * num_neurons[i] + k] =
                     (lay[i].out_weights[j * num_neurons[i] + k]) -
                     (alpha * lay[i].dw[j * num_neurons[i] + k]);
 
+        #pragma omp for schedule(static)
         for (int j = 0; j < num_neurons[i]; j++)  // Update Bias
             lay[i].bias[j] = lay[i].bias[j] - (alpha * lay[i].dbias[j]);
     }
