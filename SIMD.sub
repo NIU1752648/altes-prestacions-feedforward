@@ -10,7 +10,7 @@ export OMP_PLACES=cores
 
 module add gcc/13.2.1
 
-gcc -Ofast -fopenmp -march=native -fno-tree-vectorize main.c common/common.c configuration/config.c layer/layer.c randomizer/randomizer.c initialize/initialize.c training/training.c -o exec$1 -lm
+gcc -Ofast -fopenmp -march=native -DUSE_SIMD -fopt-info-vec-optimized main.c common/common.c configuration/config.c layer/layer.c randomizer/randomizer.c initialize/initialize.c training/training.c -o exec$1 -lm
 
 echo "Compiló wei"
 

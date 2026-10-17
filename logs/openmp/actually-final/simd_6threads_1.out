@@ -1,0 +1,71 @@
+main.c:83:23: optimized: loop vectorized using 16 byte vectors
+main.c:130:27: optimized: loop vectorized using 16 byte vectors
+main.c:130:27: optimized:  loop versioned for vectorization because of possible aliasing
+main.c:130:27: optimized: loop vectorized using 8 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 16 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:102:13: optimized: loop vectorized using 16 byte vectors
+training/training.c:102:13: optimized: loop vectorized using 16 byte vectors
+training/training.c:104:29: optimized: loop vectorized using 16 byte vectors
+training/training.c:216:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:216:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:191:60: optimized: loop vectorized using 16 byte vectors
+training/training.c:191:60: optimized: loop vectorized using 8 byte vectors
+training/training.c:199:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:199:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:191:17: optimized: loop vectorized using 16 byte vectors
+training/training.c:244:41: optimized: loop vectorized using 16 byte vectors
+training/training.c:244:41: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:244:41: optimized: loop vectorized using 8 byte vectors
+training/training.c:40:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:40:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:40:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:129:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:173:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:173:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:173:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:165:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:165:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:165:23: optimized: loop vectorized using 8 byte vectors
+Compiló wei
+
+Training...
+Epoch 0 Loss: 0.363925
+Epoch 1 Loss: 0.352520
+Epoch 2 Loss: 0.137815
+Epoch 3 Loss: 0.063487
+Epoch 4 Loss: 0.041640
+Epoch 5 Loss: 0.026164
+Epoch 6 Loss: 0.021893
+Epoch 7 Loss: 0.016618
+Epoch 8 Loss: 0.012793
+Epoch 9 Loss: 0.010941
+
+Testing...
+
+Total encerts = 929 (/946) 
+
+
+Goodbye! (5.795172 sec)
+
+
+ Performance counter stats for './exec1 configuration/configfile.txt':
+
+         34.674,78 msec task-clock:u                     #    5,919 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+             5.846      page-faults:u                    #  168,595 /sec                      
+    88.732.271.109      cycles:u                         #    2,559 GHz                         (50,00%)
+     1.338.449.707      stalled-cycles-frontend:u        #    1,51% frontend cycles idle        (49,99%)
+    29.926.489.037      stalled-cycles-backend:u         #   33,73% backend cycles idle         (50,00%)
+   114.331.187.416      instructions:u                   #    1,29  insn per cycle            
+                                                  #    0,26  stalled cycles per insn     (50,01%)
+    16.096.320.077      branches:u                       #  464,208 M/sec                       (50,01%)
+        48.435.812      branch-misses:u                  #    0,30% of all branches             (50,01%)
+
+       5,857916981 seconds time elapsed
+
+      34,171865000 seconds user
+       0,088727000 seconds sys
+
+

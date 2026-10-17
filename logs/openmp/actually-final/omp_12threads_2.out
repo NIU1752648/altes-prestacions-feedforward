@@ -1,0 +1,42 @@
+Compiló wei
+
+Training...
+Epoch 0 Loss: 0.364015
+Epoch 1 Loss: 0.306014
+Epoch 2 Loss: 0.146255
+Epoch 3 Loss: 0.090858
+Epoch 4 Loss: 0.048458
+Epoch 5 Loss: 0.027779
+Epoch 6 Loss: 0.022498
+Epoch 7 Loss: 0.016777
+Epoch 8 Loss: 0.012466
+Epoch 9 Loss: 0.011103
+
+Testing...
+
+Total encerts = 930 (/946) 
+
+
+Goodbye! (4.178206 sec)
+
+
+ Performance counter stats for './exec2 configuration/configfile.txt':
+
+         49.846,94 msec task-clock:u                     #   11,753 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+             5.964      page-faults:u                    #  119,646 /sec                      
+   127.864.455.756      cycles:u                         #    2,565 GHz                         (50,00%)
+     4.767.683.735      stalled-cycles-frontend:u        #    3,73% frontend cycles idle        (50,01%)
+    56.720.083.864      stalled-cycles-backend:u         #   44,36% backend cycles idle         (50,02%)
+   151.717.103.886      instructions:u                   #    1,19  insn per cycle            
+                                                  #    0,37  stalled cycles per insn     (50,01%)
+    13.085.935.315      branches:u                       #  262,522 M/sec                       (50,00%)
+        75.086.977      branch-misses:u                  #    0,57% of all branches             (49,98%)
+
+       4,241088738 seconds time elapsed
+
+      49,227806000 seconds user
+       0,125890000 seconds sys
+
+

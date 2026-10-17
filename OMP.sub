@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH -N 1 # number of nodes
+#SBATCH --cpus-per-task=12
+#SBATCH --exclusive
+#SBATCH --partition=nodo.q
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export OMP_PROC_BIND=close
+export OMP_PLACES=cores
+
+module add gcc/13.2.1
+
+gcc -Ofast -fopenmp -march=native -fno-tree-vectorize -fopt-info-vec-optimized main.c common/common.c configuration/config.c layer/layer.c randomizer/randomizer.c initialize/initialize.c training/training.c -o exec$1 -lm
+
+echo "Compiló wei"
+
+export OMP_NUM_THREADS=${2}
+
+perf stat ./exec$1 configuration/configfile.txt
+
+rm ./exec$1

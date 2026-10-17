@@ -19,6 +19,17 @@
 #include <stdio.h>
 #include <omp.h>
 
+#define STR_(x) #x
+#define STR(x) STR_(x)
+
+#ifdef USE_SIMD // Afegim una clàusula per evitar la vectorització.
+#define SIMD _Pragma("omp simd")
+#define SIMD_REDUCTION(var) _Pragma(STR(omp simd reduction(+:var)))
+#else
+#define SIMD
+#define SIMD_REDUCTION(var)
+#endif
+
 /**
  * @brief Inicialitza la capa incial de la xarxa (input layer) amb l'entrada
  *que volem reconeixer.
@@ -88,7 +99,7 @@ void forward_prop() {
         for (int j = 0; j < num_neurons[i]; j++) {
             const float *w_row = &w[j * n_previous];
             float sum = lay[i].bias[j];
-            #pragma omp simd reduction(+:sum)
+            SIMD_REDUCTION(sum)
             for (int k = 0; k < n_previous; k++)
                 sum += w_row[k] * actv_previous[k];
             lay[i].z[j] = sum;
@@ -183,7 +194,7 @@ void back_prop(int p) {
             float *dw_row = &lay[i - 1].dw[j * n_previous];
             const float *w_row = &lay[i - 1].out_weights[j * n_previous];
             lay[i].dz[j] = dz;
-            #pragma omp simd
+            SIMD
             for (int k = 0; k < n_previous; k++) {
                 dw_row[k] += dz * actv_previous[k];
                 dactv_previous[k] += w_row[k] * dz;
@@ -200,7 +211,7 @@ void back_prop(int p) {
                 const float dz = (lay[1].z[j] >= 0) ? lay[1].dactv[j] : 0;
                 float *dw_row = &lay[0].dw[j * n_previous];
                 lay[1].dz[j] = dz;
-                #pragma omp simd
+                SIMD
                 for (int k = 0; k < n_previous; k++)
                     dw_row[k] += dz * actv_previous[k];
                 lay[1].dbias[j] += dz;
