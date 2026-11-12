@@ -1,0 +1,442 @@
+Compilat correctament per a 4 processos
+
+Training...
+
+Training...
+
+Training...
+
+Training...
+Epoch 0 Loss: 0.017582
+Epoch 0 Loss: 0.013666
+Epoch 0 Loss: 0.010528
+Epoch 0 Loss: 0.009375
+Epoch 0 Loss: 0.008316
+Epoch 0 Loss: 0.008152
+Epoch 0 Loss: 0.008170
+Epoch 0 Loss: 0.008181
+Epoch 0 Loss: 0.007881
+Epoch 0 Loss: 0.008341
+Epoch 0 Loss: 0.007922
+Epoch 0 Loss: 0.008085
+Epoch 0 Loss: 0.007772
+Epoch 0 Loss: 0.007971
+Epoch 0 Loss: 0.007931
+Epoch 0 Loss: 0.007686
+Epoch 0 Loss: 0.007204
+Epoch 0 Loss: 0.007823
+Epoch 0 Loss: 0.008167
+Epoch 0 Loss: 0.007554
+Epoch 0 Loss: 0.007795
+Epoch 0 Loss: 0.007209
+Epoch 0 Loss: 0.007207
+Epoch 0 Loss: 0.007237
+Epoch 0 Loss: 0.006283
+Epoch 0 Loss: 0.007234
+Epoch 0 Loss: 0.008148
+Epoch 0 Loss: 0.009707
+Epoch 0 Loss: 0.008130
+Epoch 0 Loss: 0.007080
+Epoch 0 Loss: 0.007937
+Epoch 0 Loss: 0.007660
+Epoch 0 Loss: 0.009073
+Epoch 0 Loss: 0.011718
+Epoch 0 Loss: 0.011985
+Epoch 0 Loss: 0.013475
+Epoch 0 Loss: 0.011793
+Epoch 0 Loss: 0.009554
+Epoch 1 Loss: 0.010358
+Epoch 1 Loss: 0.009031
+Epoch 1 Loss: 0.010387
+Epoch 1 Loss: 0.010678
+Epoch 1 Loss: 0.007790
+Epoch 1 Loss: 0.007277
+Epoch 1 Loss: 0.007172
+Epoch 1 Loss: 0.007795
+Epoch 1 Loss: 0.006956
+Epoch 1 Loss: 0.006218
+Epoch 1 Loss: 0.006263
+Epoch 1 Loss: 0.005339
+Epoch 1 Loss: 0.005947
+Epoch 1 Loss: 0.005060
+Epoch 1 Loss: 0.005523
+Epoch 1 Loss: 0.004773
+Epoch 1 Loss: 0.004950
+Epoch 1 Loss: 0.004231
+Epoch 1 Loss: 0.005445
+Epoch 1 Loss: 0.003680
+Epoch 1 Loss: 0.004237
+Epoch 1 Loss: 0.003687
+Epoch 1 Loss: 0.004846
+Epoch 1 Loss: 0.005272
+Epoch 1 Loss: 0.004732
+Epoch 1 Loss: 0.005211
+Epoch 1 Loss: 0.003477
+Epoch 1 Loss: 0.003758
+Epoch 1 Loss: 0.003170
+Epoch 1 Loss: 0.003748
+Epoch 1 Loss: 0.004444
+Epoch 1 Loss: 0.003788
+Epoch 1 Loss: 0.002999
+Epoch 1 Loss: 0.002356
+Epoch 1 Loss: 0.003762
+Epoch 1 Loss: 0.003545
+Epoch 1 Loss: 0.006239
+Epoch 1 Loss: 0.004390
+Epoch 2 Loss: 0.003408
+Epoch 2 Loss: 0.003395
+Epoch 2 Loss: 0.002442
+Epoch 2 Loss: 0.003009
+Epoch 2 Loss: 0.002313
+Epoch 2 Loss: 0.003000
+Epoch 2 Loss: 0.003028
+Epoch 2 Loss: 0.003152
+Epoch 2 Loss: 0.002650
+Epoch 2 Loss: 0.002163
+Epoch 2 Loss: 0.001920
+Epoch 2 Loss: 0.001696
+Epoch 2 Loss: 0.002072
+Epoch 2 Loss: 0.002960
+Epoch 2 Loss: 0.002112
+Epoch 2 Loss: 0.001276
+Epoch 2 Loss: 0.001795
+Epoch 2 Loss: 0.001528
+Epoch 2 Loss: 0.001354
+Epoch 2 Loss: 0.001831
+Epoch 2 Loss: 0.002836
+Epoch 2 Loss: 0.002172
+Epoch 2 Loss: 0.001868
+Epoch 2 Loss: 0.002279
+Epoch 2 Loss: 0.001099
+Epoch 2 Loss: 0.001136
+Epoch 2 Loss: 0.001128
+Epoch 2 Loss: 0.001552
+Epoch 2 Loss: 0.001540
+Epoch 2 Loss: 0.002190
+Epoch 2 Loss: 0.002710
+Epoch 2 Loss: 0.001409
+Epoch 2 Loss: 0.001774
+Epoch 2 Loss: 0.002753
+Epoch 2 Loss: 0.001083
+Epoch 2 Loss: 0.001389
+Epoch 2 Loss: 0.001355
+Epoch 2 Loss: 0.000902
+Epoch 3 Loss: 0.001685
+Epoch 3 Loss: 0.001081
+Epoch 3 Loss: 0.001578
+Epoch 3 Loss: 0.000988
+Epoch 3 Loss: 0.000999
+Epoch 3 Loss: 0.001287
+Epoch 3 Loss: 0.001173
+Epoch 3 Loss: 0.001572
+Epoch 3 Loss: 0.001424
+Epoch 3 Loss: 0.002547
+Epoch 3 Loss: 0.004614
+Epoch 3 Loss: 0.002311
+Epoch 3 Loss: 0.001472
+Epoch 3 Loss: 0.000895
+Epoch 3 Loss: 0.000761
+Epoch 3 Loss: 0.001147
+Epoch 3 Loss: 0.001566
+Epoch 3 Loss: 0.001140
+Epoch 3 Loss: 0.001639
+Epoch 3 Loss: 0.001091
+Epoch 3 Loss: 0.001785
+Epoch 3 Loss: 0.000626
+Epoch 3 Loss: 0.000677
+Epoch 3 Loss: 0.000513
+Epoch 3 Loss: 0.000812
+Epoch 3 Loss: 0.000811
+Epoch 3 Loss: 0.000907
+Epoch 3 Loss: 0.000513
+Epoch 3 Loss: 0.000809
+Epoch 3 Loss: 0.000867
+Epoch 3 Loss: 0.000921
+Epoch 3 Loss: 0.000342
+Epoch 3 Loss: 0.000611
+Epoch 3 Loss: 0.000675
+Epoch 3 Loss: 0.000761
+Epoch 3 Loss: 0.000490
+Epoch 3 Loss: 0.000635
+Epoch 3 Loss: 0.001623
+Epoch 4 Loss: 0.001513
+Epoch 4 Loss: 0.001527
+Epoch 4 Loss: 0.001141
+Epoch 4 Loss: 0.000642
+Epoch 4 Loss: 0.000555
+Epoch 4 Loss: 0.000709
+Epoch 4 Loss: 0.000784
+Epoch 4 Loss: 0.000852
+Epoch 4 Loss: 0.001576
+Epoch 4 Loss: 0.000709
+Epoch 4 Loss: 0.000452
+Epoch 4 Loss: 0.000991
+Epoch 4 Loss: 0.001328
+Epoch 4 Loss: 0.001555
+Epoch 4 Loss: 0.001406
+Epoch 4 Loss: 0.000857
+Epoch 4 Loss: 0.000859
+Epoch 4 Loss: 0.000697
+Epoch 4 Loss: 0.000589
+Epoch 4 Loss: 0.000719
+Epoch 4 Loss: 0.000537
+Epoch 4 Loss: 0.000477
+Epoch 4 Loss: 0.000504
+Epoch 4 Loss: 0.000556
+Epoch 4 Loss: 0.000687
+Epoch 4 Loss: 0.000544
+Epoch 4 Loss: 0.000798
+Epoch 4 Loss: 0.000665
+Epoch 4 Loss: 0.000608
+Epoch 4 Loss: 0.000821
+Epoch 4 Loss: 0.000520
+Epoch 4 Loss: 0.000717
+Epoch 4 Loss: 0.000753
+Epoch 4 Loss: 0.001615
+Epoch 4 Loss: 0.000637
+Epoch 4 Loss: 0.001727
+Epoch 4 Loss: 0.000696
+Epoch 4 Loss: 0.000920
+Epoch 5 Loss: 0.000445
+Epoch 5 Loss: 0.000395
+Epoch 5 Loss: 0.001077
+Epoch 5 Loss: 0.000881
+Epoch 5 Loss: 0.000410
+Epoch 5 Loss: 0.000473
+Epoch 5 Loss: 0.000995
+Epoch 5 Loss: 0.000327
+Epoch 5 Loss: 0.000440
+Epoch 5 Loss: 0.000235
+Epoch 5 Loss: 0.000711
+Epoch 5 Loss: 0.000500
+Epoch 5 Loss: 0.000385
+Epoch 5 Loss: 0.000268
+Epoch 5 Loss: 0.000843
+Epoch 5 Loss: 0.000629
+Epoch 5 Loss: 0.000345
+Epoch 5 Loss: 0.000548
+Epoch 5 Loss: 0.000939
+Epoch 5 Loss: 0.000988
+Epoch 5 Loss: 0.000558
+Epoch 5 Loss: 0.000990
+Epoch 5 Loss: 0.000743
+Epoch 5 Loss: 0.000406
+Epoch 5 Loss: 0.000524
+Epoch 5 Loss: 0.000845
+Epoch 5 Loss: 0.000856
+Epoch 5 Loss: 0.000735
+Epoch 5 Loss: 0.000404
+Epoch 5 Loss: 0.000385
+Epoch 5 Loss: 0.000333
+Epoch 5 Loss: 0.000591
+Epoch 5 Loss: 0.000219
+Epoch 5 Loss: 0.000626
+Epoch 5 Loss: 0.000522
+Epoch 5 Loss: 0.000844
+Epoch 5 Loss: 0.000799
+Epoch 5 Loss: 0.000427
+Epoch 6 Loss: 0.000396
+Epoch 6 Loss: 0.000533
+Epoch 6 Loss: 0.000213
+Epoch 6 Loss: 0.000378
+Epoch 6 Loss: 0.000263
+Epoch 6 Loss: 0.000693
+Epoch 6 Loss: 0.000746
+Epoch 6 Loss: 0.000437
+Epoch 6 Loss: 0.000573
+Epoch 6 Loss: 0.000671
+Epoch 6 Loss: 0.000795
+Epoch 6 Loss: 0.000441
+Epoch 6 Loss: 0.000398
+Epoch 6 Loss: 0.000213
+Epoch 6 Loss: 0.000204
+Epoch 6 Loss: 0.000330
+Epoch 6 Loss: 0.000275
+Epoch 6 Loss: 0.000244
+Epoch 6 Loss: 0.000432
+Epoch 6 Loss: 0.000479
+Epoch 6 Loss: 0.000451
+Epoch 6 Loss: 0.000397
+Epoch 6 Loss: 0.000704
+Epoch 6 Loss: 0.001249
+Epoch 6 Loss: 0.000753
+Epoch 6 Loss: 0.000656
+Epoch 6 Loss: 0.000808
+Epoch 6 Loss: 0.000473
+Epoch 6 Loss: 0.000345
+Epoch 6 Loss: 0.000206
+Epoch 6 Loss: 0.000365
+Epoch 6 Loss: 0.000273
+Epoch 6 Loss: 0.000440
+Epoch 6 Loss: 0.000340
+Epoch 6 Loss: 0.000333
+Epoch 6 Loss: 0.000739
+Epoch 6 Loss: 0.001190
+Epoch 6 Loss: 0.000790
+Epoch 7 Loss: 0.000251
+Epoch 7 Loss: 0.000402
+Epoch 7 Loss: 0.000452
+Epoch 7 Loss: 0.000231
+Epoch 7 Loss: 0.000223
+Epoch 7 Loss: 0.000615
+Epoch 7 Loss: 0.000386
+Epoch 7 Loss: 0.000286
+Epoch 7 Loss: 0.000489
+Epoch 7 Loss: 0.000608
+Epoch 7 Loss: 0.000592
+Epoch 7 Loss: 0.000288
+Epoch 7 Loss: 0.000378
+Epoch 7 Loss: 0.000336
+Epoch 7 Loss: 0.000548
+Epoch 7 Loss: 0.000249
+Epoch 7 Loss: 0.000290
+Epoch 7 Loss: 0.000333
+Epoch 7 Loss: 0.000205
+Epoch 7 Loss: 0.000238
+Epoch 7 Loss: 0.000494
+Epoch 7 Loss: 0.000284
+Epoch 7 Loss: 0.000986
+Epoch 7 Loss: 0.000347
+Epoch 7 Loss: 0.000613
+Epoch 7 Loss: 0.000355
+Epoch 7 Loss: 0.000448
+Epoch 7 Loss: 0.000881
+Epoch 7 Loss: 0.000453
+Epoch 7 Loss: 0.000239
+Epoch 7 Loss: 0.000248
+Epoch 7 Loss: 0.000668
+Epoch 7 Loss: 0.000472
+Epoch 7 Loss: 0.000199
+Epoch 7 Loss: 0.000185
+Epoch 7 Loss: 0.000555
+Epoch 7 Loss: 0.000324
+Epoch 7 Loss: 0.000302
+Epoch 8 Loss: 0.000238
+Epoch 8 Loss: 0.000363
+Epoch 8 Loss: 0.000272
+Epoch 8 Loss: 0.000243
+Epoch 8 Loss: 0.000248
+Epoch 8 Loss: 0.000261
+Epoch 8 Loss: 0.000225
+Epoch 8 Loss: 0.000182
+Epoch 8 Loss: 0.000204
+Epoch 8 Loss: 0.000195
+Epoch 8 Loss: 0.000186
+Epoch 8 Loss: 0.000188
+Epoch 8 Loss: 0.000122
+Epoch 8 Loss: 0.000203
+Epoch 8 Loss: 0.000254
+Epoch 8 Loss: 0.000456
+Epoch 8 Loss: 0.000229
+Epoch 8 Loss: 0.000582
+Epoch 8 Loss: 0.000535
+Epoch 8 Loss: 0.000616
+Epoch 8 Loss: 0.000851
+Epoch 8 Loss: 0.000647
+Epoch 8 Loss: 0.000129
+Epoch 8 Loss: 0.000246
+Epoch 8 Loss: 0.000330
+Epoch 8 Loss: 0.000379
+Epoch 8 Loss: 0.000109
+Epoch 8 Loss: 0.000315
+Epoch 8 Loss: 0.000204
+Epoch 8 Loss: 0.000189
+Epoch 8 Loss: 0.000270
+Epoch 8 Loss: 0.000308
+Epoch 8 Loss: 0.000323
+Epoch 8 Loss: 0.000176
+Epoch 8 Loss: 0.000144
+Epoch 8 Loss: 0.000234
+Epoch 8 Loss: 0.000564
+Epoch 8 Loss: 0.000149
+Epoch 9 Loss: 0.000256
+Epoch 9 Loss: 0.000144
+Epoch 9 Loss: 0.000113
+Epoch 9 Loss: 0.000213
+Epoch 9 Loss: 0.000249
+Epoch 9 Loss: 0.000468
+Epoch 9 Loss: 0.000277
+Epoch 9 Loss: 0.000308
+Epoch 9 Loss: 0.000652
+Epoch 9 Loss: 0.000317
+Epoch 9 Loss: 0.000168
+Epoch 9 Loss: 0.000419
+Epoch 9 Loss: 0.000185
+Epoch 9 Loss: 0.000202
+Epoch 9 Loss: 0.000492
+Epoch 9 Loss: 0.000222
+Epoch 9 Loss: 0.000268
+Epoch 9 Loss: 0.000230
+Epoch 9 Loss: 0.000150
+Epoch 9 Loss: 0.000180
+Epoch 9 Loss: 0.000401
+Epoch 9 Loss: 0.000153
+Epoch 9 Loss: 0.000174
+Epoch 9 Loss: 0.000141
+Epoch 9 Loss: 0.000127
+Epoch 9 Loss: 0.000169
+Epoch 9 Loss: 0.000348
+Epoch 9 Loss: 0.000630
+Epoch 9 Loss: 0.000321
+Epoch 9 Loss: 0.000288
+Epoch 9 Loss: 0.000278
+Epoch 9 Loss: 0.000270
+Epoch 9 Loss: 0.000206
+Epoch 9 Loss: 0.000192
+Epoch 9 Loss: 0.000232
+Epoch 9 Loss: 0.000239
+Epoch 9 Loss: 0.000230
+
+Testing...
+
+Testing...
+
+Testing...
+Epoch 9 Loss: 0.000687
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (14.810062 sec)
+
+
+
+Goodbye! (14.809302 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (14.811366 sec)
+
+
+
+Goodbye! (14.814554 sec)
+
+
+ Performance counter stats for 'mpirun -np 4 ./exec1 configuration/configfile.txt':
+
+         60.617,55 msec task-clock:u                     #    3,696 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+            62.826      page-faults:u                    #    1,036 K/sec                     
+   134.101.566.845      cycles:u                         #    2,212 GHz                         (66,67%)
+     1.655.564.332      stalled-cycles-frontend:u        #    1,23% frontend cycles idle        (66,66%)
+    84.115.349.176      stalled-cycles-backend:u         #   62,73% backend cycles idle         (66,67%)
+   136.158.155.460      instructions:u                   #    1,02  insn per cycle            
+                                                  #    0,62  stalled cycles per insn     (66,67%)
+     6.921.477.960      branches:u                       #  114,183 M/sec                       (66,66%)
+        86.821.775      branch-misses:u                  #    1,25% of all branches             (66,67%)
+
+      16,401817309 seconds time elapsed
+
+      51,591294000 seconds user
+       7,677712000 seconds sys
+
+
