@@ -26,8 +26,6 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
-#include <mpi.h>
-
 //-----------FREE INPUT------------
 void freeInput(int np, char** input) {
     for (int i = 0; i < np; i++)
@@ -97,46 +95,21 @@ void train_neural_net() {
             ranpat[np] = op;
         }
 
-
-
-        //PARALELITZAR ESTO
-
-        int rank, size;
-        MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-        MPI_Comm_size(MPI_COMM_WORLD, &size);
-        int batch_size_per_proc = batch_size / size;
-        
-
         for (int nb = 0; nb < num_training_patterns/batch_size; nb++) {
             init_deltas();
-            float local_loss = 0;
-            int start_idx = nb * batch_size + rank * batch_size_per_proc;
-            int end_idx = start_idx + batch_size_per_proc;
-
-            for (int i = start_idx; i < end_idx; i++){
+            for (int i = nb*batch_size; i < (nb+1)*batch_size; i++) {
                 int p = ranpat[i];
+
                 feed_input(p);
                 forward_prop();
-                local_loss += compute_loss(p);
+                loss += compute_loss(p);
                 back_prop(p);
             }
-
-            MPI_Allreduce(&local_loss, &loss, 1, MPI_FLOAT, MPI_SUM, MPI_COMM_WORLD);
-
-            for (int i = 0; i < num_layers-1; i++){
-                int num_weights = num_neurons[i+1] * num_neurons[i];
-                MPI_Allreduce(MPI_IN_PLACE, lay[i].dw, num_weights, MPI_FLOAT, MPI_SUM, MPI_COMM_WORLD);
-                MPI_Allreduce(MPI_IN_PLACE, lay[i].dbias, num_neurons[i+1], MPI_FLOAT, MPI_SUM, MPI_COMM_WORLD);
-            }
-
             update_weights();
-
-            if (rank == 0){
-                printf("Epoch %d Loss: %f\n", it, loss/num_training_patterns);
-            }
-            if (debug == 1 && rank == 0) getchar();
         }
 
+        printf("Epoch %d Loss: %f\n", it, loss/num_training_patterns);
+        if (debug == 1) getchar();
     }
     freeInput(num_training_patterns, input);
 }
@@ -167,9 +140,6 @@ void test_nn() {
 
 //-----------MAIN-----------//
 int main(int argc, char** argv) {
-
-    MPI_Init(&argc, &argv);
-
     if (debug == 1)
         printf("argc = %d \n", argc);
     if (argc <= 1)
@@ -204,7 +174,5 @@ int main(int argc, char** argv) {
 
     printf("\n\nGoodbye! (%f sec)\n\n", elapsed);
 
-    MPI_Finalize();
-    
     return 0;
 }
