@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH --exclusive
+#SBATCH --job-name=specs
+
+echo "=== Node: $(hostname)"
+echo "=== lscpu";             lscpu
+echo "=== NUMA";              numactl --hardware 2>/dev/null || echo "numactl no disponible"
+echo "=== Memòria";           free -h
+echo "=== Topologia";         lstopo-no-graphics --no-io 2>/dev/null || echo "lstopo no disponible"
+echo "=== Flags vectorials";  grep -o -w 'sse4_2\|avx\|avx2\|avx512f\|fma' /proc/cpuinfo | sort | uniq -c

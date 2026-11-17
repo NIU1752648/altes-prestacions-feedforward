@@ -1,0 +1,53 @@
+=== Node: clus10.hpc.local
+=== lscpu
+Arquitectura:                        x86_64
+modo(s) de operación de las CPUs:    32-bit, 64-bit
+Orden de los bytes:                  Little Endian
+CPU(s):                              12
+Lista de la(s) CPU(s) en línea:      0-11
+Hilo(s) de procesamiento por núcleo: 1
+Núcleo(s) por «socket»:              6
+«Socket(s)»                          2
+Modo(s) NUMA:                        2
+ID de fabricante:                    AuthenticAMD
+Familia de CPU:                      16
+Modelo:                              8
+Nombre del modelo:                   AMD Opteron(tm) Processor 4180
+Revisión:                            1
+CPU MHz:                             2600.092
+BogoMIPS:                            5200.18
+Virtualización:                      AMD-V
+Caché L1d:                           64K
+Caché L1i:                           64K
+Caché L2:                            512K
+Caché L3:                            6144K
+CPU(s) del nodo NUMA 0:              0-5
+CPU(s) del nodo NUMA 1:              6-11
+Indicadores:                         fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr hw_pstate vmmcall npt lbrv svm_lock nrip_save pausefilter
+=== NUMA
+numactl no disponible
+=== Memòria
+              total        used        free      shared  buff/cache   available
+Mem:           39Gi       675Mi        35Gi       433Mi       2,5Gi        37Gi
+Swap:          11Gi        27Mi        11Gi
+=== Topologia
+Machine (39GB total)
+  Package L#0
+    NUMANode L#0 (P#0 19GB)
+    L3 L#0 (6144KB)
+      L2 L#0 (512KB) + L1d L#0 (64KB) + L1i L#0 (64KB) + Core L#0 + PU L#0 (P#0)
+      L2 L#1 (512KB) + L1d L#1 (64KB) + L1i L#1 (64KB) + Core L#1 + PU L#1 (P#1)
+      L2 L#2 (512KB) + L1d L#2 (64KB) + L1i L#2 (64KB) + Core L#2 + PU L#2 (P#2)
+      L2 L#3 (512KB) + L1d L#3 (64KB) + L1i L#3 (64KB) + Core L#3 + PU L#3 (P#3)
+      L2 L#4 (512KB) + L1d L#4 (64KB) + L1i L#4 (64KB) + Core L#4 + PU L#4 (P#4)
+      L2 L#5 (512KB) + L1d L#5 (64KB) + L1i L#5 (64KB) + Core L#5 + PU L#5 (P#5)
+  Package L#1
+    NUMANode L#1 (P#1 20GB)
+    L3 L#1 (6144KB)
+      L2 L#6 (512KB) + L1d L#6 (64KB) + L1i L#6 (64KB) + Core L#6 + PU L#6 (P#6)
+      L2 L#7 (512KB) + L1d L#7 (64KB) + L1i L#7 (64KB) + Core L#7 + PU L#7 (P#7)
+      L2 L#8 (512KB) + L1d L#8 (64KB) + L1i L#8 (64KB) + Core L#8 + PU L#8 (P#8)
+      L2 L#9 (512KB) + L1d L#9 (64KB) + L1i L#9 (64KB) + Core L#9 + PU L#9 (P#9)
+      L2 L#10 (512KB) + L1d L#10 (64KB) + L1i L#10 (64KB) + Core L#10 + PU L#10 (P#10)
+      L2 L#11 (512KB) + L1d L#11 (64KB) + L1i L#11 (64KB) + Core L#11 + PU L#11 (P#11)
+=== Flags vectorials

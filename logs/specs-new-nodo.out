@@ -1,0 +1,144 @@
+=== Node: clus07.hpc.local
+=== lscpu
+Arquitectura:                        x86_64
+modo(s) de operación de las CPUs:    32-bit, 64-bit
+Orden de los bytes:                  Little Endian
+CPU(s):                              64
+Lista de la(s) CPU(s) en línea:      0-63
+Hilo(s) de procesamiento por núcleo: 2
+Núcleo(s) por «socket»:              16
+«Socket(s)»                          2
+Modo(s) NUMA:                        2
+ID de fabricante:                    GenuineIntel
+Familia de CPU:                      6
+Modelo:                              143
+Nombre del modelo:                   Intel(R) Xeon(R) Gold 5416S
+Revisión:                            8
+CPU MHz:                             2000.000
+CPU MHz máx.:                        4000,0000
+CPU MHz mín.:                        800,0000
+BogoMIPS:                            4000.00
+Virtualización:                      VT-x
+Caché L1d:                           48K
+Caché L1i:                           32K
+Caché L2:                            2048K
+Caché L3:                            30720K
+CPU(s) del nodo NUMA 0:              0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62
+CPU(s) del nodo NUMA 1:              1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63
+Indicadores:                         fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cat_l2 cdp_l3 invpcid_single cdp_l2 ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect avx_vnni avx512_bf16 wbnoinvd dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req hfi avx512vbmi umip pku ospke waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg tme avx512_vpopcntdq la57 rdpid bus_lock_detect cldemote movdiri movdir64b enqcmd fsrm md_clear serialize tsxldtrk pconfig arch_lbr amx_bf16 avx512_fp16 amx_tile amx_int8 flush_l1d arch_capabilities
+=== NUMA
+numactl no disponible
+=== Memòria
+              total        used        free      shared  buff/cache   available
+Mem:          124Gi       7,9Gi       517Mi       111Mi       116Gi       115Gi
+Swap:          11Gi       390Mi        11Gi
+=== Topologia
+Machine (125GB total)
+  Package L#0
+    NUMANode L#0 (P#0 62GB)
+    L3 L#0 (30MB)
+      L2 L#0 (2048KB) + L1d L#0 (48KB) + L1i L#0 (32KB) + Core L#0
+        PU L#0 (P#0)
+        PU L#1 (P#48)
+      L2 L#1 (2048KB) + L1d L#1 (48KB) + L1i L#1 (32KB) + Core L#1
+        PU L#2 (P#2)
+        PU L#3 (P#34)
+      L2 L#2 (2048KB) + L1d L#2 (48KB) + L1i L#2 (32KB) + Core L#2
+        PU L#4 (P#4)
+        PU L#5 (P#36)
+      L2 L#3 (2048KB) + L1d L#3 (48KB) + L1i L#3 (32KB) + Core L#3
+        PU L#6 (P#6)
+        PU L#7 (P#38)
+      L2 L#4 (2048KB) + L1d L#4 (48KB) + L1i L#4 (32KB) + Core L#4
+        PU L#8 (P#8)
+        PU L#9 (P#40)
+      L2 L#5 (2048KB) + L1d L#5 (48KB) + L1i L#5 (32KB) + Core L#5
+        PU L#10 (P#10)
+        PU L#11 (P#42)
+      L2 L#6 (2048KB) + L1d L#6 (48KB) + L1i L#6 (32KB) + Core L#6
+        PU L#12 (P#12)
+        PU L#13 (P#44)
+      L2 L#7 (2048KB) + L1d L#7 (48KB) + L1i L#7 (32KB) + Core L#7
+        PU L#14 (P#14)
+        PU L#15 (P#46)
+      L2 L#8 (2048KB) + L1d L#8 (48KB) + L1i L#8 (32KB) + Core L#8
+        PU L#16 (P#16)
+        PU L#17 (P#32)
+      L2 L#9 (2048KB) + L1d L#9 (48KB) + L1i L#9 (32KB) + Core L#9
+        PU L#18 (P#18)
+        PU L#19 (P#50)
+      L2 L#10 (2048KB) + L1d L#10 (48KB) + L1i L#10 (32KB) + Core L#10
+        PU L#20 (P#20)
+        PU L#21 (P#52)
+      L2 L#11 (2048KB) + L1d L#11 (48KB) + L1i L#11 (32KB) + Core L#11
+        PU L#22 (P#22)
+        PU L#23 (P#54)
+      L2 L#12 (2048KB) + L1d L#12 (48KB) + L1i L#12 (32KB) + Core L#12
+        PU L#24 (P#24)
+        PU L#25 (P#56)
+      L2 L#13 (2048KB) + L1d L#13 (48KB) + L1i L#13 (32KB) + Core L#13
+        PU L#26 (P#26)
+        PU L#27 (P#58)
+      L2 L#14 (2048KB) + L1d L#14 (48KB) + L1i L#14 (32KB) + Core L#14
+        PU L#28 (P#28)
+        PU L#29 (P#60)
+      L2 L#15 (2048KB) + L1d L#15 (48KB) + L1i L#15 (32KB) + Core L#15
+        PU L#30 (P#30)
+        PU L#31 (P#62)
+  Package L#1
+    NUMANode L#1 (P#1 63GB)
+    L3 L#1 (30MB)
+      L2 L#16 (2048KB) + L1d L#16 (48KB) + L1i L#16 (32KB) + Core L#16
+        PU L#32 (P#1)
+        PU L#33 (P#33)
+      L2 L#17 (2048KB) + L1d L#17 (48KB) + L1i L#17 (32KB) + Core L#17
+        PU L#34 (P#3)
+        PU L#35 (P#35)
+      L2 L#18 (2048KB) + L1d L#18 (48KB) + L1i L#18 (32KB) + Core L#18
+        PU L#36 (P#5)
+        PU L#37 (P#37)
+      L2 L#19 (2048KB) + L1d L#19 (48KB) + L1i L#19 (32KB) + Core L#19
+        PU L#38 (P#7)
+        PU L#39 (P#39)
+      L2 L#20 (2048KB) + L1d L#20 (48KB) + L1i L#20 (32KB) + Core L#20
+        PU L#40 (P#9)
+        PU L#41 (P#41)
+      L2 L#21 (2048KB) + L1d L#21 (48KB) + L1i L#21 (32KB) + Core L#21
+        PU L#42 (P#11)
+        PU L#43 (P#43)
+      L2 L#22 (2048KB) + L1d L#22 (48KB) + L1i L#22 (32KB) + Core L#22
+        PU L#44 (P#13)
+        PU L#45 (P#45)
+      L2 L#23 (2048KB) + L1d L#23 (48KB) + L1i L#23 (32KB) + Core L#23
+        PU L#46 (P#15)
+        PU L#47 (P#47)
+      L2 L#24 (2048KB) + L1d L#24 (48KB) + L1i L#24 (32KB) + Core L#24
+        PU L#48 (P#17)
+        PU L#49 (P#49)
+      L2 L#25 (2048KB) + L1d L#25 (48KB) + L1i L#25 (32KB) + Core L#25
+        PU L#50 (P#19)
+        PU L#51 (P#51)
+      L2 L#26 (2048KB) + L1d L#26 (48KB) + L1i L#26 (32KB) + Core L#26
+        PU L#52 (P#21)
+        PU L#53 (P#53)
+      L2 L#27 (2048KB) + L1d L#27 (48KB) + L1i L#27 (32KB) + Core L#27
+        PU L#54 (P#23)
+        PU L#55 (P#55)
+      L2 L#28 (2048KB) + L1d L#28 (48KB) + L1i L#28 (32KB) + Core L#28
+        PU L#56 (P#25)
+        PU L#57 (P#57)
+      L2 L#29 (2048KB) + L1d L#29 (48KB) + L1i L#29 (32KB) + Core L#29
+        PU L#58 (P#27)
+        PU L#59 (P#59)
+      L2 L#30 (2048KB) + L1d L#30 (48KB) + L1i L#30 (32KB) + Core L#30
+        PU L#60 (P#29)
+        PU L#61 (P#61)
+      L2 L#31 (2048KB) + L1d L#31 (48KB) + L1i L#31 (32KB) + Core L#31
+        PU L#62 (P#31)
+        PU L#63 (P#63)
+=== Flags vectorials
+     64 avx
+     64 avx2
+     64 avx512f
+     64 fma
+     64 sse4_2
