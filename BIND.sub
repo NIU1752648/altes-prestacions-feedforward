@@ -1,0 +1,37 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH --exclusive
+
+# Prova de col·locació i fixació de processos MPI.
+# Ús: sbatch -p <cua> --ntasks=<P> BIND.sub <id> <P> <map-by> <bind-to> [flags]
+#   map-by   core | socket | default   (default = no passa l'opció a mpirun)
+#   bind-to  core | socket | none | default
+#   flags    flags extra de compilació (p. ex. -DPROFILE)
+
+ID=$1
+P=$2
+MAP=$3
+BIND=$4
+FLAGS=$5
+
+module load gcc/13.2.1
+module load openmpi/4.1.1
+
+# Quin node i quin processador ens ha tocat
+echo "Node: $(hostname)"
+lscpu | grep -E "Model name|Nombre del modelo"
+
+mpicc -Ofast -march=native ${FLAGS} main.c common/common.c configuration/config.c layer/layer.c randomizer/randomizer.c initialize/initialize.c training/training.c -o exec_bind_${ID} -lm
+
+# Opcions de mpirun segons la configuració
+OPTS="--report-bindings"
+[ "${MAP}"  != "default" ] && OPTS="${OPTS} --map-by ${MAP}"
+[ "${BIND}" != "default" ] && OPTS="${OPTS} --bind-to ${BIND}"
+
+echo "Configuració: P=${P} map-by=${MAP} bind-to=${BIND}"
+echo "mpirun -np ${P} ${OPTS}"
+
+# --report-bindings escriu a stderr; SLURM el desa al mateix .out
+mpirun -np ${P} ${OPTS} ./exec_bind_${ID} configuration/configfile.txt
+
+rm ./exec_bind_${ID}
