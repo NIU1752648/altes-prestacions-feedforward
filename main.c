@@ -26,6 +26,12 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
+#include <mpi.h>
+
+// MPI: identificador d'aquest procés (0..size-1) i nombre total de processos
+int rank = 0;
+int size = 1;
+
 //-----------FREE INPUT------------
 void freeInput(int np, char** input) {
     for (int i = 0; i < np; i++)
@@ -70,7 +76,7 @@ void printRecognized(int p, layer Output) {
  *
  */
 void train_neural_net() {
-    printf("\nTraining...\n");
+    if (rank == 0) printf("\nTraining...\n");
 
     if ((input = loadPatternSet(num_training_patterns, dataset_training_path,
                                 1)) == NULL) {
@@ -95,21 +101,47 @@ void train_neural_net() {
             ranpat[np] = op;
         }
 
+        // MPI: tots els processos tenen la mateixa llavor, per tant ranpat[]
+        // queda igual a tots sense comunicar res.
+
         for (int nb = 0; nb < num_training_patterns/batch_size; nb++) {
             init_deltas();
-            for (int i = nb*batch_size; i < (nb+1)*batch_size; i++) {
+
+            // MPI: repartiment cíclic dels patrons del batch. El procés 'rank'
+            // fa els patrons rank, rank+size, rank+2*size... del batch.
+            for (int i = nb*batch_size + rank; i < (nb+1)*batch_size; i += size) {
                 int p = ranpat[i];
 
                 feed_input(p);
                 forward_prop();
-                loss += compute_loss(p);
-                back_prop(p);
+                loss += compute_loss(p);   // loss local d'aquest procés
+                back_prop(p);              // gradient parcial local
             }
+
+            // MPI: suma dels gradients parcials de tots els processos.
+            // dw de la capa l té num_neurons[l+1] x num_neurons[l] elements.
+            // back_prop escriu els dbias de les capes 1..num_layers-1, que
+            // tenen num_neurons[l+1] elements.
+            for (int l = 0; l < num_layers - 1; l++) {
+                int nw = num_neurons[l + 1] * num_neurons[l];
+                int nbias = num_neurons[l + 1];
+                MPI_Allreduce(MPI_IN_PLACE, lay[l].dw, nw, MPI_FLOAT,
+                              MPI_SUM, MPI_COMM_WORLD);
+                MPI_Allreduce(MPI_IN_PLACE, lay[l + 1].dbias, nbias, MPI_FLOAT,
+                              MPI_SUM, MPI_COMM_WORLD);
+            }
+
+            // Tots els processos tenen el mateix gradient: apliquen el mateix canvi
             update_weights();
         }
 
-        printf("Epoch %d Loss: %f\n", it, loss/num_training_patterns);
-        if (debug == 1) getchar();
+        // MPI: loss de tot l'epoch (una reducció per epoch, només per imprimir)
+        float global_loss = 0.0;
+        MPI_Reduce(&loss, &global_loss, 1, MPI_FLOAT, MPI_SUM, 0, MPI_COMM_WORLD);
+
+        if (rank == 0)
+            printf("Epoch %d Loss: %f\n", it, global_loss/num_training_patterns);
+        if (debug == 1 && rank == 0) getchar();
     }
     freeInput(num_training_patterns, input);
 }
@@ -140,6 +172,10 @@ void test_nn() {
 
 //-----------MAIN-----------//
 int main(int argc, char** argv) {
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+
     if (debug == 1)
         printf("argc = %d \n", argc);
     if (argc <= 1)
@@ -174,5 +210,6 @@ int main(int argc, char** argv) {
 
     printf("\n\nGoodbye! (%f sec)\n\n", elapsed);
 
+    MPI_Finalize();
     return 0;
 }
