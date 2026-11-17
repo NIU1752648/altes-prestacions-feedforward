@@ -1,0 +1,30 @@
+=== Node: clus07.hpc.local
+=== Interfícies
+lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP> 
+eth0             UP             d0:46:0c:73:b3:9e <BROADCAST,MULTICAST,UP,LOWER_UP> 
+eth1             UP             d0:46:0c:73:b3:9f <BROADCAST,MULTICAST,UP,LOWER_UP> 
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0             UP             192.168.11.7/24 fe80::d246:cff:fe73:b39e/64 
+eth1             UP             192.168.12.7/24 fe80::d246:cff:fe73:b39f/64 
+=== Velocitat (Mb/s)
+eth0: 1000
+eth1: 1000
+lo: 
+=== InfiniBand
+=== Targetes de xarxa
+01:00.0 Ethernet controller: Broadcom Inc. and subsidiaries NetXtreme BCM5720 Gigabit Ethernet PCIe
+01:00.1 Ethernet controller: Broadcom Inc. and subsidiaries NetXtreme BCM5720 Gigabit Ethernet PCIe
+=== Transports d'OpenMPI
+                 MCA btl: ofi (MCA v2.1.0, API v3.1.0, Component v4.1.1)
+                 MCA btl: openib (MCA v2.1.0, API v3.1.0, Component v4.1.1)
+                 MCA btl: self (MCA v2.1.0, API v3.1.0, Component v4.1.1)
+                 MCA btl: tcp (MCA v2.1.0, API v3.1.0, Component v4.1.1)
+                 MCA btl: usnic (MCA v2.1.0, API v3.1.0, Component v4.1.1)
+                 MCA btl: vader (MCA v2.1.0, API v3.1.0, Component v4.1.1)
+                 MCA mtl: ofi (MCA v2.1.0, API v2.0.0, Component v4.1.1)
+                 MCA mtl: psm2 (MCA v2.1.0, API v2.0.0, Component v4.1.1)
+                 MCA pml: v (MCA v2.1.0, API v2.0.0, Component v4.1.1)
+                 MCA pml: cm (MCA v2.1.0, API v2.0.0, Component v4.1.1)
+                 MCA pml: monitoring (MCA v2.1.0, API v2.0.0, Component v4.1.1)
+                 MCA pml: ob1 (MCA v2.1.0, API v2.0.0, Component v4.1.1)
+                 MCA pml: ucx (MCA v2.1.0, API v2.0.0, Component v4.1.1)

@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH --exclusive
+#SBATCH --job-name=netspecs
+
+echo "=== Node: $(hostname)"
+echo "=== Interfícies";        ip -br link; ip -br addr
+echo "=== Velocitat (Mb/s)";   for i in /sys/class/net/*; do echo "$(basename $i): $(cat $i/speed 2>/dev/null)"; done
+echo "=== InfiniBand";         ibstat 2>/dev/null || ls /sys/class/infiniband 2>/dev/null || echo "no IB"
+echo "=== Targetes de xarxa";  lspci 2>/dev/null | grep -i -E "ethernet|infiniband|network"
+echo "=== Transports d'OpenMPI"
+module load openmpi/4.1.1
+ompi_info | grep -E "MCA (btl|pml|mtl)"
