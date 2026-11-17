@@ -1,0 +1,90 @@
+main.c:116:23: optimized: loop vectorized using 32 byte vectors
+main.c:116:23: optimized: loop vectorized using 16 byte vectors
+main.c:210:27: optimized: loop vectorized using 32 byte vectors
+main.c:210:27: optimized:  loop versioned for vectorization because of possible aliasing
+main.c:210:27: optimized: loop vectorized using 16 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 32 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:29:23: optimized: loop vectorized using 32 byte vectors
+training/training.c:29:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:29:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:103:23: optimized: loop vectorized using 32 byte vectors
+training/training.c:103:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized: loop vectorized using 32 byte vectors
+training/training.c:146:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:146:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:138:23: optimized: loop vectorized using 32 byte vectors
+training/training.c:138:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:138:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:193:27: optimized: loop vectorized using 32 byte vectors
+training/training.c:193:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:193:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:188:31: optimized: loop vectorized using 32 byte vectors
+training/training.c:188:31: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:188:31: optimized: loop vectorized using 16 byte vectors
+Compilat correctament per a 2 processos
+
+Training...
+Epoch 0 Loss: 0.363882
+Epoch 1 Loss: 0.351930
+Epoch 2 Loss: 0.120974
+Epoch 3 Loss: 0.053518
+Epoch 4 Loss: 0.041017
+Epoch 5 Loss: 0.025741
+Epoch 6 Loss: 0.022009
+Epoch 7 Loss: 0.016304
+Epoch 8 Loss: 0.012426
+
+Testing...
+Epoch 9 Loss: 0.010770
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (6.182212 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (6.193749 sec)
+
+PROFILE P=2
+PROFILE fase             min        avg        max
+PROFILE load          0.0213     0.0214     0.0215
+PROFILE compute       5.5221     5.5279     5.5337
+PROFILE wait          0.0109     0.0160     0.0210
+PROFILE comm          0.2113     0.2114     0.2115
+PROFILE comm_dw0      0.1736     0.1737     0.1738
+PROFILE comm_rest     0.0375     0.0375     0.0375
+PROFILE update        0.0862     0.0869     0.0877
+PROFILE test          0.3183     0.3239     0.3296
+
+ Performance counter stats for 'mpirun -np 2 ./exec2p_1 configuration/configfile.txt':
+
+         12.610,30 msec task-clock:u              #    1,571 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+            26.261      page-faults:u             #    2,083 K/sec                  
+    47.873.585.072      cycles:u                  #    3,796 GHz                    
+   207.721.287.182      instructions:u            #    4,34  insn per cycle         
+    26.173.590.200      branches:u                #    2,076 G/sec                  
+        43.415.182      branch-misses:u           #    0,17% of all branches        
+   286.916.903.100      slots:u                   #   22,753 G/sec                  
+   199.007.732.959      topdown-retiring:u        #     69,1% retiring              
+     3.967.600.517      topdown-bad-spec:u        #      1,4% bad speculation       
+    38.333.312.551      topdown-fe-bound:u        #     13,3% frontend bound        
+    46.889.930.842      topdown-be-bound:u        #     16,3% backend bound         
+    16.307.780.129      topdown-heavy-ops:u       #      5,7% heavy operations       #     63,4% light operations      
+     3.966.860.193      topdown-br-mispredict:u   #      1,4% branch mispredict      #      0,0% machine clears        
+     4.573.384.849      topdown-fetch-lat:u       #      1,6% fetch latency          #     11,7% fetch bandwidth       
+    10.196.346.501      topdown-mem-bound:u       #      3,5% memory bound           #     12,7% Core bound            
+
+       8,024890905 seconds time elapsed
+
+      12,020378000 seconds user
+       0,544467000 seconds sys
+
+

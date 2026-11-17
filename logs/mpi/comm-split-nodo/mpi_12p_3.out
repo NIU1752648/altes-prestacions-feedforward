@@ -1,0 +1,162 @@
+main.c:116:23: optimized: loop vectorized using 16 byte vectors
+main.c:210:27: optimized: loop vectorized using 16 byte vectors
+main.c:210:27: optimized:  loop versioned for vectorization because of possible aliasing
+main.c:210:27: optimized: loop vectorized using 8 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 16 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:29:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:29:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:29:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:103:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:146:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:138:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:138:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:138:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:193:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:193:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:193:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:188:31: optimized: loop vectorized using 16 byte vectors
+training/training.c:188:31: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:188:31: optimized: loop vectorized using 8 byte vectors
+Compilat correctament per a 12 processos
+
+Training...
+Epoch 0 Loss: 0.363883
+Epoch 1 Loss: 0.356447
+Epoch 2 Loss: 0.140748
+Epoch 3 Loss: 0.060123
+Epoch 4 Loss: 0.039875
+Epoch 5 Loss: 0.025777
+Epoch 6 Loss: 0.021337
+Epoch 7 Loss: 0.016409
+Epoch 8 Loss: 0.012788
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+Epoch 9 Loss: 0.010845
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.806800 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.812044 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.804118 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.823560 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.813689 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.826869 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.868944 sec)
+
+
+
+Goodbye! (21.864436 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.868566 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.867448 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.877998 sec)
+
+
+
+Goodbye! (21.867342 sec)
+
+PROFILE P=12
+PROFILE fase             min        avg        max
+PROFILE load          0.0197     0.0232     0.0283
+PROFILE compute       7.2033     7.3955     8.2337
+PROFILE wait          0.1203     0.9634     1.1759
+PROFILE comm          9.5432     9.5675     9.5829
+PROFILE comm_dw0      6.8881     7.5016     7.8055
+PROFILE comm_rest     1.7748     2.0647     2.6841
+PROFILE update        2.5341     2.5676     2.6241
+PROFILE test          1.2807     1.3210     1.3550
+
+ Performance counter stats for 'mpirun -np 12 ./exec12p_3 configuration/configfile.txt':
+
+        265.844,33 msec task-clock:u                     #   11,286 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+           195.242      page-faults:u                    #  734,422 /sec                      
+   456.977.562.275      cycles:u                         #    1,719 GHz                         (50,00%)
+     8.709.389.872      stalled-cycles-frontend:u        #    1,91% frontend cycles idle        (50,01%)
+   327.212.161.802      stalled-cycles-backend:u         #   71,60% backend cycles idle         (50,01%)
+   332.245.347.658      instructions:u                   #    0,73  insn per cycle            
+                                                  #    0,98  stalled cycles per insn     (50,01%)
+    46.160.660.052      branches:u                       #  173,638 M/sec                       (50,00%)
+       357.446.216      branch-misses:u                  #    0,77% of all branches             (50,00%)
+
+      23,554586625 seconds time elapsed
+
+     180,330927000 seconds user
+      78,122584000 seconds sys
+
+
