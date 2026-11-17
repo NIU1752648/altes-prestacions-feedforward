@@ -1,0 +1,86 @@
+Node: clus01.hpc.local
+Nombre del modelo:                   AMD Opteron(tm) Processor 4180
+main.c:116:23: optimized: loop vectorized using 16 byte vectors
+main.c:210:27: optimized: loop vectorized using 16 byte vectors
+main.c:210:27: optimized:  loop versioned for vectorization because of possible aliasing
+main.c:210:27: optimized: loop vectorized using 8 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 16 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:29:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:29:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:29:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:103:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:146:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:138:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:138:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:138:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:193:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:193:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:193:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:188:31: optimized: loop vectorized using 16 byte vectors
+training/training.c:188:31: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:188:31: optimized: loop vectorized using 8 byte vectors
+Compilat correctament per a 2 processos
+[clus01.hpc.local:3649347] MCW rank 1 bound to socket 1[core 6[hwt 0]]: [./././././.][B/././././.]
+[clus01.hpc.local:3649347] MCW rank 0 bound to socket 0[core 0[hwt 0]]: [B/././././.][./././././.]
+
+Training...
+Epoch 0 Loss: 0.364044
+Epoch 1 Loss: 0.307333
+Epoch 2 Loss: 0.192172
+Epoch 3 Loss: 0.123796
+Epoch 4 Loss: 0.099408
+Epoch 5 Loss: 0.085523
+Epoch 6 Loss: 0.076965
+Epoch 7 Loss: 0.032175
+Epoch 8 Loss: 0.017827
+Epoch 9 Loss: 0.014274
+
+Testing...
+
+Testing...
+
+Total encerts = 925 (/946) 
+
+
+Goodbye! (22.914185 sec)
+
+
+Total encerts = 925 (/946) 
+PROFILE P=2
+PROFILE fase             min        avg        max
+PROFILE load          0.0195     0.0195     0.0196
+PROFILE compute      19.8713    19.8949    19.9185
+PROFILE wait          0.0079     0.0495     0.0910
+PROFILE comm          1.4301     1.4314     1.4327
+PROFILE comm_dw0      1.1390     1.1409     1.1428
+PROFILE comm_rest     0.2894     0.2900     0.2905
+PROFILE update        0.4977     0.5166     0.5354
+
+
+Goodbye! (22.918115 sec)
+
+PROFILE test          1.0006     1.0025     1.0044
+
+ Performance counter stats for 'mpirun -np 2 --map-by socket --bind-to core --report-bindings ./exec2p_1 configuration/configfile.txt':
+
+         46.539,26 msec task-clock:u                     #    1,899 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+            37.377      page-faults:u                    #  803,128 /sec                      
+   113.196.906.810      cycles:u                         #    2,432 GHz                         (66,68%)
+       728.545.959      stalled-cycles-frontend:u        #    0,64% frontend cycles idle        (66,68%)
+    41.268.121.288      stalled-cycles-backend:u         #   36,46% backend cycles idle         (66,66%)
+   210.371.823.670      instructions:u                   #    1,86  insn per cycle            
+                                                  #    0,20  stalled cycles per insn     (66,66%)
+    26.454.234.957      branches:u                       #  568,428 M/sec                       (66,66%)
+        50.109.834      branch-misses:u                  #    0,19% of all branches             (66,66%)
+
+      24,512109611 seconds time elapsed
+
+      43,565987000 seconds user
+       2,258430000 seconds sys
+
+

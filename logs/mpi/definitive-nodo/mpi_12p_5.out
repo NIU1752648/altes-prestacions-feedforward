@@ -1,0 +1,176 @@
+Node: clus01.hpc.local
+Nombre del modelo:                   AMD Opteron(tm) Processor 4180
+main.c:116:23: optimized: loop vectorized using 16 byte vectors
+main.c:210:27: optimized: loop vectorized using 16 byte vectors
+main.c:210:27: optimized:  loop versioned for vectorization because of possible aliasing
+main.c:210:27: optimized: loop vectorized using 8 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 16 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:29:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:29:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:29:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:103:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:146:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:138:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:138:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:138:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:193:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:193:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:193:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:188:31: optimized: loop vectorized using 16 byte vectors
+training/training.c:188:31: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:188:31: optimized: loop vectorized using 8 byte vectors
+Compilat correctament per a 12 processos
+[clus01.hpc.local:3649243] MCW rank 5 bound to socket 1[core 8[hwt 0]]: [./././././.][././B/././.]
+[clus01.hpc.local:3649243] MCW rank 6 bound to socket 0[core 3[hwt 0]]: [./././B/./.][./././././.]
+[clus01.hpc.local:3649243] MCW rank 7 bound to socket 1[core 9[hwt 0]]: [./././././.][./././B/./.]
+[clus01.hpc.local:3649243] MCW rank 8 bound to socket 0[core 4[hwt 0]]: [././././B/.][./././././.]
+[clus01.hpc.local:3649243] MCW rank 9 bound to socket 1[core 10[hwt 0]]: [./././././.][././././B/.]
+[clus01.hpc.local:3649243] MCW rank 10 bound to socket 0[core 5[hwt 0]]: [./././././B][./././././.]
+[clus01.hpc.local:3649243] MCW rank 11 bound to socket 1[core 11[hwt 0]]: [./././././.][./././././B]
+[clus01.hpc.local:3649243] MCW rank 0 bound to socket 0[core 0[hwt 0]]: [B/././././.][./././././.]
+[clus01.hpc.local:3649243] MCW rank 1 bound to socket 1[core 6[hwt 0]]: [./././././.][B/././././.]
+[clus01.hpc.local:3649243] MCW rank 2 bound to socket 0[core 1[hwt 0]]: [./B/./././.][./././././.]
+[clus01.hpc.local:3649243] MCW rank 3 bound to socket 1[core 7[hwt 0]]: [./././././.][./B/./././.]
+[clus01.hpc.local:3649243] MCW rank 4 bound to socket 0[core 2[hwt 0]]: [././B/././.][./././././.]
+
+Training...
+Epoch 0 Loss: 0.363883
+Epoch 1 Loss: 0.356447
+Epoch 2 Loss: 0.140748
+Epoch 3 Loss: 0.060123
+Epoch 4 Loss: 0.039875
+Epoch 5 Loss: 0.025777
+Epoch 6 Loss: 0.021337
+Epoch 7 Loss: 0.016409
+Epoch 8 Loss: 0.012788
+
+Testing...
+
+Testing...
+
+Testing...
+Epoch 9 Loss: 0.010845
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (22.415000 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (22.427409 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (22.425451 sec)
+
+
+
+Goodbye! (22.401409 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (22.424993 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (22.443937 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (22.516254 sec)
+
+
+
+Goodbye! (22.513622 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (22.519640 sec)
+
+
+
+Goodbye! (22.519839 sec)
+
+
+
+Goodbye! (22.530188 sec)
+
+
+
+Goodbye! (22.527063 sec)
+
+PROFILE P=12
+PROFILE fase             min        avg        max
+PROFILE load          0.0187     0.0241     0.0288
+PROFILE compute       6.8415     7.2971     8.3892
+PROFILE wait          0.1719     1.3235     1.8666
+PROFILE comm          9.7086     9.7122     9.7177
+PROFILE comm_dw0      6.9422     7.6487     8.1572
+PROFILE comm_rest     1.5594     2.0623     2.7663
+PROFILE update        2.4121     2.5006     2.5865
+PROFILE test          1.5464     1.6109     1.6603
+
+ Performance counter stats for 'mpirun -np 12 --map-by socket --bind-to core --report-bindings ./exec12p_5 configuration/configfile.txt':
+
+        273.628,92 msec task-clock:u                     #   11,283 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+           191.984      page-faults:u                    #  701,622 /sec                      
+   465.588.027.225      cycles:u                         #    1,702 GHz                         (66,67%)
+     9.816.858.105      stalled-cycles-frontend:u        #    2,11% frontend cycles idle        (66,67%)
+   331.163.828.156      stalled-cycles-backend:u         #   71,13% backend cycles idle         (66,66%)
+   336.090.726.013      instructions:u                   #    0,72  insn per cycle            
+                                                  #    0,99  stalled cycles per insn     (66,67%)
+    46.998.639.412      branches:u                       #  171,760 M/sec                       (66,67%)
+       374.236.138      branch-misses:u                  #    0,80% of all branches             (66,67%)
+
+      24,252115156 seconds time elapsed
+
+     182,941376000 seconds user
+      83,917593000 seconds sys
+
+

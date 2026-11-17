@@ -1,0 +1,94 @@
+Node: clus08.hpc.local
+Nombre del modelo:                   Intel(R) Xeon(R) Gold 5416S
+main.c:116:23: optimized: loop vectorized using 32 byte vectors
+main.c:116:23: optimized: loop vectorized using 16 byte vectors
+main.c:210:27: optimized: loop vectorized using 32 byte vectors
+main.c:210:27: optimized:  loop versioned for vectorization because of possible aliasing
+main.c:210:27: optimized: loop vectorized using 16 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 32 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:29:23: optimized: loop vectorized using 32 byte vectors
+training/training.c:29:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:29:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:103:23: optimized: loop vectorized using 32 byte vectors
+training/training.c:103:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized: loop vectorized using 32 byte vectors
+training/training.c:146:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:146:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:138:23: optimized: loop vectorized using 32 byte vectors
+training/training.c:138:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:138:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:193:27: optimized: loop vectorized using 32 byte vectors
+training/training.c:193:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:193:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:188:31: optimized: loop vectorized using 32 byte vectors
+training/training.c:188:31: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:188:31: optimized: loop vectorized using 16 byte vectors
+Compilat correctament per a 2 processos
+[clus08.hpc.local:2468446] MCW rank 0 bound to socket 0[core 0[hwt 0-1]]: [BB/../../../../../../../../../../../../../../..][../../../../../../../../../../../../../../../..]
+[clus08.hpc.local:2468446] MCW rank 1 bound to socket 0[core 1[hwt 0-1]]: [../BB/../../../../../../../../../../../../../..][../../../../../../../../../../../../../../../..]
+
+Training...
+Epoch 0 Loss: 0.363882
+Epoch 1 Loss: 0.351930
+Epoch 2 Loss: 0.120974
+Epoch 3 Loss: 0.053518
+Epoch 4 Loss: 0.041017
+Epoch 5 Loss: 0.025741
+Epoch 6 Loss: 0.022009
+Epoch 7 Loss: 0.016304
+Epoch 8 Loss: 0.012426
+
+Testing...
+Epoch 9 Loss: 0.010770
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (6.179951 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (6.185604 sec)
+
+PROFILE P=2
+PROFILE fase             min        avg        max
+PROFILE load          0.0069     0.0070     0.0071
+PROFILE compute       5.5165     5.5231     5.5297
+PROFILE wait          0.0095     0.0201     0.0307
+PROFILE comm          0.2250     0.2251     0.2252
+PROFILE comm_dw0      0.1852     0.1853     0.1854
+PROFILE comm_rest     0.0396     0.0396     0.0396
+PROFILE update        0.0921     0.0961     0.1001
+PROFILE test          0.3081     0.3110     0.3139
+
+ Performance counter stats for 'mpirun -np 2 --report-bindings ./exec2p_4 configuration/configfile.txt':
+
+         12.630,40 msec task-clock:u              #    1,668 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+            25.845      page-faults:u             #    2,046 K/sec                  
+    47.923.301.837      cycles:u                  #    3,794 GHz                    
+   207.728.050.034      instructions:u            #    4,33  insn per cycle         
+    26.174.939.099      branches:u                #    2,072 G/sec                  
+        43.419.921      branch-misses:u           #    0,17% of all branches        
+   287.169.765.378      slots:u                   #   22,736 G/sec                  
+   197.513.231.083      topdown-retiring:u        #     68,6% retiring              
+     4.534.218.532      topdown-bad-spec:u        #      1,6% bad speculation       
+    37.226.347.098      topdown-fe-bound:u        #     12,9% frontend bound        
+    48.473.471.415      topdown-be-bound:u        #     16,8% backend bound         
+    15.760.731.611      topdown-heavy-ops:u       #      5,5% heavy operations       #     63,2% light operations      
+     4.533.675.324      topdown-br-mispredict:u   #      1,6% branch mispredict      #      0,0% machine clears        
+     5.126.435.685      topdown-fetch-lat:u       #      1,8% fetch latency          #     11,2% fetch bandwidth       
+    11.317.408.666      topdown-mem-bound:u       #      3,9% memory bound           #     12,9% Core bound            
+
+       7,571300503 seconds time elapsed
+
+      12,055609000 seconds user
+       0,525407000 seconds sys
+
+

@@ -1,0 +1,112 @@
+Node: clus08.hpc.local
+Nombre del modelo:                   Intel(R) Xeon(R) Gold 5416S
+main.c:116:23: optimized: loop vectorized using 32 byte vectors
+main.c:116:23: optimized: loop vectorized using 16 byte vectors
+main.c:210:27: optimized: loop vectorized using 32 byte vectors
+main.c:210:27: optimized:  loop versioned for vectorization because of possible aliasing
+main.c:210:27: optimized: loop vectorized using 16 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 32 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:29:23: optimized: loop vectorized using 32 byte vectors
+training/training.c:29:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:29:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:103:23: optimized: loop vectorized using 32 byte vectors
+training/training.c:103:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized: loop vectorized using 32 byte vectors
+training/training.c:146:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:146:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:138:23: optimized: loop vectorized using 32 byte vectors
+training/training.c:138:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:138:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:193:27: optimized: loop vectorized using 32 byte vectors
+training/training.c:193:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:193:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:188:31: optimized: loop vectorized using 32 byte vectors
+training/training.c:188:31: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:188:31: optimized: loop vectorized using 16 byte vectors
+Compilat correctament per a 4 processos
+[clus08.hpc.local:2468311] MCW rank 0 bound to socket 0[core 0[hwt 0-1]], socket 0[core 1[hwt 0-1]], socket 0[core 2[hwt 0-1]], socket 0[core 3[hwt 0-1]], socket 0[core 4[hwt 0-1]], socket 0[core 5[hwt 0-1]], socket 0[core 6[hwt 0-1]], socket 0[core 7[hwt 0-1]], socket 0[core 8[hwt 0-1]], socket 0[core 9[hwt 0-1]], socket 0[core 10[hwt 0-1]], socket 0[core 11[hwt 0-1]], socket 0[core 12[hwt 0-1]], socket 0[core 13[hwt 0-1]], socket 0[core 14[hwt 0-1]], socket 0[core 15[hwt 0-1]]: [BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB][../../../../../../../../../../../../../../../..]
+[clus08.hpc.local:2468311] MCW rank 1 bound to socket 1[core 16[hwt 0-1]], socket 1[core 17[hwt 0-1]], socket 1[core 18[hwt 0-1]], socket 1[core 19[hwt 0-1]], socket 1[core 20[hwt 0-1]], socket 1[core 21[hwt 0-1]], socket 1[core 22[hwt 0-1]], socket 1[core 23[hwt 0-1]], socket 1[core 24[hwt 0-1]], socket 1[core 25[hwt 0-1]], socket 1[core 26[hwt 0-1]], socket 1[core 27[hwt 0-1]], socket 1[core 28[hwt 0-1]], socket 1[core 29[hwt 0-1]], socket 1[core 30[hwt 0-1]], socket 1[core 31[hwt 0-1]]: [../../../../../../../../../../../../../../../..][BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB]
+[clus08.hpc.local:2468311] MCW rank 2 bound to socket 0[core 0[hwt 0-1]], socket 0[core 1[hwt 0-1]], socket 0[core 2[hwt 0-1]], socket 0[core 3[hwt 0-1]], socket 0[core 4[hwt 0-1]], socket 0[core 5[hwt 0-1]], socket 0[core 6[hwt 0-1]], socket 0[core 7[hwt 0-1]], socket 0[core 8[hwt 0-1]], socket 0[core 9[hwt 0-1]], socket 0[core 10[hwt 0-1]], socket 0[core 11[hwt 0-1]], socket 0[core 12[hwt 0-1]], socket 0[core 13[hwt 0-1]], socket 0[core 14[hwt 0-1]], socket 0[core 15[hwt 0-1]]: [BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB][../../../../../../../../../../../../../../../..]
+[clus08.hpc.local:2468311] MCW rank 3 bound to socket 1[core 16[hwt 0-1]], socket 1[core 17[hwt 0-1]], socket 1[core 18[hwt 0-1]], socket 1[core 19[hwt 0-1]], socket 1[core 20[hwt 0-1]], socket 1[core 21[hwt 0-1]], socket 1[core 22[hwt 0-1]], socket 1[core 23[hwt 0-1]], socket 1[core 24[hwt 0-1]], socket 1[core 25[hwt 0-1]], socket 1[core 26[hwt 0-1]], socket 1[core 27[hwt 0-1]], socket 1[core 28[hwt 0-1]], socket 1[core 29[hwt 0-1]], socket 1[core 30[hwt 0-1]], socket 1[core 31[hwt 0-1]]: [../../../../../../../../../../../../../../../..][BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB]
+
+Training...
+Epoch 0 Loss: 0.364046
+Epoch 1 Loss: 0.315698
+Epoch 2 Loss: 0.138408
+Epoch 3 Loss: 0.060799
+Epoch 4 Loss: 0.041254
+Epoch 5 Loss: 0.026758
+Epoch 6 Loss: 0.021765
+Epoch 7 Loss: 0.016830
+Epoch 8 Loss: 0.012878
+
+Testing...
+
+Testing...
+
+Testing...
+Epoch 9 Loss: 0.010909
+
+Testing...
+
+Total encerts = 929 (/946) 
+
+
+Goodbye! (3.846065 sec)
+
+
+Total encerts = 929 (/946) 
+
+
+Goodbye! (3.856035 sec)
+
+
+Total encerts = 929 (/946) 
+
+
+Goodbye! (3.856774 sec)
+
+
+Total encerts = 929 (/946) 
+
+
+Goodbye! (3.844765 sec)
+
+PROFILE P=4
+PROFILE fase             min        avg        max
+PROFILE load          0.0056     0.0068     0.0072
+PROFILE compute       2.6421     2.7610     2.8947
+PROFILE wait          0.0156     0.1509     0.2606
+PROFILE comm          0.5190     0.5193     0.5195
+PROFILE comm_dw0      0.4155     0.4164     0.4173
+PROFILE comm_rest     0.1020     0.1027     0.1034
+PROFILE update        0.0847     0.0961     0.1014
+PROFILE test          0.3078     0.3164     0.3217
+
+ Performance counter stats for 'mpirun -np 4 --report-bindings ./exec4p_3 configuration/configfile.txt':
+
+         15.999,88 msec task-clock:u              #    3,030 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+            41.170      page-faults:u             #    2,573 K/sec                  
+    54.322.319.275      cycles:u                  #    3,395 GHz                    
+   218.937.525.274      instructions:u            #    4,03  insn per cycle         
+    27.897.719.147      branches:u                #    1,744 G/sec                  
+        46.409.435      branch-misses:u           #    0,17% of all branches        
+   325.431.007.734      slots:u                   #   20,340 G/sec                  
+   210.153.843.772      topdown-retiring:u        #     64,5% retiring              
+     4.813.924.231      topdown-bad-spec:u        #      1,5% bad speculation       
+    48.471.028.064      topdown-fe-bound:u        #     14,9% frontend bound        
+    62.326.076.201      topdown-be-bound:u        #     19,1% backend bound         
+    17.869.145.114      topdown-heavy-ops:u       #      5,5% heavy operations       #     59,0% light operations      
+     4.813.635.911      topdown-br-mispredict:u   #      1,5% branch mispredict      #      0,0% machine clears        
+     8.691.307.137      topdown-fetch-lat:u       #      2,7% fetch latency          #     12,2% fetch bandwidth       
+    21.218.202.587      topdown-mem-bound:u       #      6,5% memory bound           #     12,6% Core bound            
+
+       5,280475805 seconds time elapsed
+
+      13,604430000 seconds user
+       2,244151000 seconds sys
+
+

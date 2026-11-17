@@ -1,0 +1,176 @@
+Node: clus12.hpc.local
+Nombre del modelo:                   AMD Opteron(tm) Processor 4180
+main.c:116:23: optimized: loop vectorized using 16 byte vectors
+main.c:210:27: optimized: loop vectorized using 16 byte vectors
+main.c:210:27: optimized:  loop versioned for vectorization because of possible aliasing
+main.c:210:27: optimized: loop vectorized using 8 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 16 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:29:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:29:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:29:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:103:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:146:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:138:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:138:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:138:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:193:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:193:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:193:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:188:31: optimized: loop vectorized using 16 byte vectors
+training/training.c:188:31: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:188:31: optimized: loop vectorized using 8 byte vectors
+Compilat correctament per a 12 processos
+[clus12.hpc.local:725512] MCW rank 8 bound to socket 0[core 4[hwt 0]]: [././././B/.][./././././.]
+[clus12.hpc.local:725512] MCW rank 9 bound to socket 1[core 10[hwt 0]]: [./././././.][././././B/.]
+[clus12.hpc.local:725512] MCW rank 10 bound to socket 0[core 5[hwt 0]]: [./././././B][./././././.]
+[clus12.hpc.local:725512] MCW rank 11 bound to socket 1[core 11[hwt 0]]: [./././././.][./././././B]
+[clus12.hpc.local:725512] MCW rank 0 bound to socket 0[core 0[hwt 0]]: [B/././././.][./././././.]
+[clus12.hpc.local:725512] MCW rank 1 bound to socket 1[core 6[hwt 0]]: [./././././.][B/././././.]
+[clus12.hpc.local:725512] MCW rank 2 bound to socket 0[core 1[hwt 0]]: [./B/./././.][./././././.]
+[clus12.hpc.local:725512] MCW rank 3 bound to socket 1[core 7[hwt 0]]: [./././././.][./B/./././.]
+[clus12.hpc.local:725512] MCW rank 4 bound to socket 0[core 2[hwt 0]]: [././B/././.][./././././.]
+[clus12.hpc.local:725512] MCW rank 5 bound to socket 1[core 8[hwt 0]]: [./././././.][././B/././.]
+[clus12.hpc.local:725512] MCW rank 6 bound to socket 0[core 3[hwt 0]]: [./././B/./.][./././././.]
+[clus12.hpc.local:725512] MCW rank 7 bound to socket 1[core 9[hwt 0]]: [./././././.][./././B/./.]
+
+Training...
+Epoch 0 Loss: 0.363883
+Epoch 1 Loss: 0.356447
+Epoch 2 Loss: 0.140748
+Epoch 3 Loss: 0.060123
+Epoch 4 Loss: 0.039875
+Epoch 5 Loss: 0.025777
+Epoch 6 Loss: 0.021337
+Epoch 7 Loss: 0.016409
+Epoch 8 Loss: 0.012788
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+Epoch 9 Loss: 0.010845
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.886578 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.887288 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.886649 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.882669 sec)
+
+
+
+Goodbye! (21.893218 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.902249 sec)
+
+
+
+Goodbye! (21.883914 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.898879 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.896355 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.908931 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.907847 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (21.898297 sec)
+
+PROFILE P=12
+PROFILE fase             min        avg        max
+PROFILE load          0.0190     0.0254     0.0298
+PROFILE compute       7.1681     7.3669     8.2098
+PROFILE wait          0.1448     1.0084     1.2175
+PROFILE comm          9.5750     9.5792     9.5845
+PROFILE comm_dw0      6.9291     7.5725     7.9430
+PROFILE comm_rest     1.6403     2.0054     2.6471
+PROFILE update        2.5388     2.5520     2.5701
+PROFILE test          1.3526     1.3590     1.3660
+
+ Performance counter stats for 'mpirun -np 12 --map-by socket --bind-to core --report-bindings ./exec12p_4 configuration/configfile.txt':
+
+        266.553,68 msec task-clock:u              #   11,303 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+           192.670      page-faults:u             #  722,819 /sec                   
+   456.641.823.116      cycles:u                  #    1,713 GHz                      (66,67%)
+    10.053.462.101      stalled-cycles-frontend:u #    2,20% frontend cycles idle     (66,67%)
+   326.176.998.397      stalled-cycles-backend:u  #   71,43% backend cycles idle      (66,67%)
+   332.396.140.021      instructions:u            #    0,73  insn per cycle         
+                                                  #    0,98  stalled cycles per insn  (66,66%)
+    46.136.829.299      branches:u                #  173,086 M/sec                    (66,66%)
+       350.810.707      branch-misses:u           #    0,76% of all branches          (66,67%)
+
+      23,582574709 seconds time elapsed
+
+     180,088634000 seconds user
+      79,250394000 seconds sys
+
+

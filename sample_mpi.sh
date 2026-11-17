@@ -27,7 +27,7 @@ esac
 OUT_DIR=logs/mpi/${RUN_NAME}
 mkdir -p "${OUT_DIR}"   # SLURM no crea la carpeta de sortida
 
-for P in 1 2 4 6 12; do
+for P in 2 4 6 12; do
     for r in $(seq 1 "${REPS}"); do
         # El primer argument del job fa que cada feina tingui un executable propi
         sbatch --partition="${PARTITION}" \
