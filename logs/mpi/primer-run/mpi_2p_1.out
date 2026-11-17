@@ -1,0 +1,50 @@
+Compilat correctament per a 2 processos
+
+Training...
+Epoch 0 Loss: 0.364044
+Epoch 1 Loss: 0.307333
+Epoch 2 Loss: 0.192172
+Epoch 3 Loss: 0.123796
+Epoch 4 Loss: 0.099408
+Epoch 5 Loss: 0.085523
+Epoch 6 Loss: 0.076965
+Epoch 7 Loss: 0.032175
+Epoch 8 Loss: 0.017827
+Epoch 9 Loss: 0.014274
+
+Testing...
+
+Testing...
+
+Total encerts = 925 (/946) 
+
+
+Goodbye! (30.820851 sec)
+
+
+Total encerts = 925 (/946) 
+
+
+Goodbye! (30.825698 sec)
+
+
+ Performance counter stats for 'mpirun -np 2 ./exec2p_1 configuration/configfile.txt':
+
+         62.357,92 msec task-clock:u              #    1,924 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+            41.168      page-faults:u             #  660,189 /sec                   
+   152.360.518.661      cycles:u                  #    2,443 GHz                      (66,67%)
+     2.891.491.052      stalled-cycles-frontend:u #    1,90% frontend cycles idle     (66,65%)
+    78.150.347.181      stalled-cycles-backend:u  #   51,29% backend cycles idle      (66,66%)
+   211.241.165.521      instructions:u            #    1,39  insn per cycle         
+                                                  #    0,37  stalled cycles per insn  (66,68%)
+    26.979.138.475      branches:u                #  432,650 M/sec                    (66,67%)
+        51.132.788      branch-misses:u           #    0,19% of all branches          (66,67%)
+
+      32,412760224 seconds time elapsed
+
+      58,622312000 seconds user
+       2,554908000 seconds sys
+
+
