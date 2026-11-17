@@ -1,0 +1,78 @@
+Node: clus02.hpc.local
+Nombre del modelo:                   AMD Opteron(tm) Processor 4180
+Configuració: P=6 map-by=core bind-to=core
+mpirun -np 6 --report-bindings --map-by core --bind-to core
+[clus02.hpc.local:3622380] MCW rank 0 bound to socket 0[core 0[hwt 0]]: [B/././././.][./././././.]
+[clus02.hpc.local:3622380] MCW rank 1 bound to socket 0[core 1[hwt 0]]: [./B/./././.][./././././.]
+[clus02.hpc.local:3622380] MCW rank 2 bound to socket 0[core 2[hwt 0]]: [././B/././.][./././././.]
+[clus02.hpc.local:3622380] MCW rank 3 bound to socket 0[core 3[hwt 0]]: [./././B/./.][./././././.]
+[clus02.hpc.local:3622380] MCW rank 4 bound to socket 0[core 4[hwt 0]]: [././././B/.][./././././.]
+[clus02.hpc.local:3622380] MCW rank 5 bound to socket 0[core 5[hwt 0]]: [./././././B][./././././.]
+
+Training...
+Epoch 0 Loss: 0.363880
+Epoch 1 Loss: 0.352025
+Epoch 2 Loss: 0.139981
+Epoch 3 Loss: 0.061629
+Epoch 4 Loss: 0.040355
+Epoch 5 Loss: 0.025882
+Epoch 6 Loss: 0.020899
+Epoch 7 Loss: 0.016357
+Epoch 8 Loss: 0.013044
+
+Testing...
+
+Testing...
+
+Testing...
+Epoch 9 Loss: 0.010881
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (26.054807 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (26.057565 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (26.073622 sec)
+
+PROFILE P=6
+PROFILE fase            min        avg        max
+PROFILE load         0.0184     0.0233     0.0283
+PROFILE compute     14.0319    14.4721    15.2681
+PROFILE wait         0.0343     0.8210     1.2486
+PROFILE comm         6.6202     6.6211     6.6217
+PROFILE update       2.5706     2.5786     2.5816
+PROFILE test         1.5317     1.5433     1.5474
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (26.064788 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (26.059742 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (26.066632 sec)
+

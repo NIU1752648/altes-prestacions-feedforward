@@ -1,0 +1,78 @@
+Node: clus08.hpc.local
+Nombre del modelo:                   Intel(R) Xeon(R) Gold 5416S
+Configuració: P=6 map-by=core bind-to=socket
+mpirun -np 6 --report-bindings --map-by core --bind-to socket
+[clus08.hpc.local:2460886] MCW rank 5 bound to socket 0[core 0[hwt 0-1]], socket 0[core 1[hwt 0-1]], socket 0[core 2[hwt 0-1]], socket 0[core 3[hwt 0-1]], socket 0[core 4[hwt 0-1]], socket 0[core 5[hwt 0-1]], socket 0[core 6[hwt 0-1]], socket 0[core 7[hwt 0-1]], socket 0[core 8[hwt 0-1]], socket 0[core 9[hwt 0-1]], socket 0[core 10[hwt 0-1]], socket 0[core 11[hwt 0-1]], socket 0[core 12[hwt 0-1]], socket 0[core 13[hwt 0-1]], socket 0[core 14[hwt 0-1]], socket 0[core 15[hwt 0-1]]: [BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB][../../../../../../../../../../../../../../../..]
+[clus08.hpc.local:2460886] MCW rank 0 bound to socket 0[core 0[hwt 0-1]], socket 0[core 1[hwt 0-1]], socket 0[core 2[hwt 0-1]], socket 0[core 3[hwt 0-1]], socket 0[core 4[hwt 0-1]], socket 0[core 5[hwt 0-1]], socket 0[core 6[hwt 0-1]], socket 0[core 7[hwt 0-1]], socket 0[core 8[hwt 0-1]], socket 0[core 9[hwt 0-1]], socket 0[core 10[hwt 0-1]], socket 0[core 11[hwt 0-1]], socket 0[core 12[hwt 0-1]], socket 0[core 13[hwt 0-1]], socket 0[core 14[hwt 0-1]], socket 0[core 15[hwt 0-1]]: [BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB][../../../../../../../../../../../../../../../..]
+[clus08.hpc.local:2460886] MCW rank 1 bound to socket 0[core 0[hwt 0-1]], socket 0[core 1[hwt 0-1]], socket 0[core 2[hwt 0-1]], socket 0[core 3[hwt 0-1]], socket 0[core 4[hwt 0-1]], socket 0[core 5[hwt 0-1]], socket 0[core 6[hwt 0-1]], socket 0[core 7[hwt 0-1]], socket 0[core 8[hwt 0-1]], socket 0[core 9[hwt 0-1]], socket 0[core 10[hwt 0-1]], socket 0[core 11[hwt 0-1]], socket 0[core 12[hwt 0-1]], socket 0[core 13[hwt 0-1]], socket 0[core 14[hwt 0-1]], socket 0[core 15[hwt 0-1]]: [BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB][../../../../../../../../../../../../../../../..]
+[clus08.hpc.local:2460886] MCW rank 2 bound to socket 0[core 0[hwt 0-1]], socket 0[core 1[hwt 0-1]], socket 0[core 2[hwt 0-1]], socket 0[core 3[hwt 0-1]], socket 0[core 4[hwt 0-1]], socket 0[core 5[hwt 0-1]], socket 0[core 6[hwt 0-1]], socket 0[core 7[hwt 0-1]], socket 0[core 8[hwt 0-1]], socket 0[core 9[hwt 0-1]], socket 0[core 10[hwt 0-1]], socket 0[core 11[hwt 0-1]], socket 0[core 12[hwt 0-1]], socket 0[core 13[hwt 0-1]], socket 0[core 14[hwt 0-1]], socket 0[core 15[hwt 0-1]]: [BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB][../../../../../../../../../../../../../../../..]
+[clus08.hpc.local:2460886] MCW rank 3 bound to socket 0[core 0[hwt 0-1]], socket 0[core 1[hwt 0-1]], socket 0[core 2[hwt 0-1]], socket 0[core 3[hwt 0-1]], socket 0[core 4[hwt 0-1]], socket 0[core 5[hwt 0-1]], socket 0[core 6[hwt 0-1]], socket 0[core 7[hwt 0-1]], socket 0[core 8[hwt 0-1]], socket 0[core 9[hwt 0-1]], socket 0[core 10[hwt 0-1]], socket 0[core 11[hwt 0-1]], socket 0[core 12[hwt 0-1]], socket 0[core 13[hwt 0-1]], socket 0[core 14[hwt 0-1]], socket 0[core 15[hwt 0-1]]: [BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB][../../../../../../../../../../../../../../../..]
+[clus08.hpc.local:2460886] MCW rank 4 bound to socket 0[core 0[hwt 0-1]], socket 0[core 1[hwt 0-1]], socket 0[core 2[hwt 0-1]], socket 0[core 3[hwt 0-1]], socket 0[core 4[hwt 0-1]], socket 0[core 5[hwt 0-1]], socket 0[core 6[hwt 0-1]], socket 0[core 7[hwt 0-1]], socket 0[core 8[hwt 0-1]], socket 0[core 9[hwt 0-1]], socket 0[core 10[hwt 0-1]], socket 0[core 11[hwt 0-1]], socket 0[core 12[hwt 0-1]], socket 0[core 13[hwt 0-1]], socket 0[core 14[hwt 0-1]], socket 0[core 15[hwt 0-1]]: [BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB/BB][../../../../../../../../../../../../../../../..]
+
+Training...
+Epoch 0 Loss: 0.363915
+Epoch 1 Loss: 0.325798
+Epoch 2 Loss: 0.245894
+Epoch 3 Loss: 0.105513
+Epoch 4 Loss: 0.053917
+Epoch 5 Loss: 0.031724
+Epoch 6 Loss: 0.025752
+Epoch 7 Loss: 0.018428
+Epoch 8 Loss: 0.013696
+
+Testing...
+
+Testing...
+Epoch 9 Loss: 0.011667
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.833239 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.840930 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.842055 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.844433 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.828029 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.839029 sec)
+
+PROFILE P=6
+PROFILE fase            min        avg        max
+PROFILE load         0.0063     0.0078     0.0086
+PROFILE compute      1.8760     1.9799     2.1499
+PROFILE wait         0.0237     0.1886     0.2901
+PROFILE comm         0.9668     0.9671     0.9674
+PROFILE update       0.3556     0.3680     0.3757
+PROFILE test         0.3165     0.3255     0.3292

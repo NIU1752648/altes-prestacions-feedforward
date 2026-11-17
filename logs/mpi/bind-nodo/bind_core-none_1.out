@@ -1,0 +1,78 @@
+Node: clus05.hpc.local
+Nombre del modelo:                   AMD Opteron(tm) Processor 4180
+Configuració: P=6 map-by=core bind-to=none
+mpirun -np 6 --report-bindings --map-by core --bind-to none
+[clus05.hpc.local:3601027] MCW rank 0 is not bound (or bound to all available processors)
+[clus05.hpc.local:3601028] MCW rank 1 is not bound (or bound to all available processors)
+[clus05.hpc.local:3601029] MCW rank 2 is not bound (or bound to all available processors)
+[clus05.hpc.local:3601030] MCW rank 3 is not bound (or bound to all available processors)
+[clus05.hpc.local:3601032] MCW rank 4 is not bound (or bound to all available processors)
+[clus05.hpc.local:3601034] MCW rank 5 is not bound (or bound to all available processors)
+
+Training...
+Epoch 0 Loss: 0.363880
+Epoch 1 Loss: 0.352025
+Epoch 2 Loss: 0.139981
+Epoch 3 Loss: 0.061629
+Epoch 4 Loss: 0.040355
+Epoch 5 Loss: 0.025882
+Epoch 6 Loss: 0.020899
+Epoch 7 Loss: 0.016357
+Epoch 8 Loss: 0.013044
+Epoch 9 Loss: 0.010881
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.744950 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.844409 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.886268 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.977311 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.982059 sec)
+
+
+
+Goodbye! (18.985153 sec)
+
+PROFILE P=6
+PROFILE fase            min        avg        max
+PROFILE load         0.0182     0.0188     0.0197
+PROFILE compute      9.2293    10.5294    11.6249
+PROFILE wait         0.0103     1.1093     2.3987
+PROFILE comm         4.8739     4.8753     4.8760
+PROFILE update       1.1726     1.2025     1.2396
+PROFILE test         1.0127     1.1652     1.2467

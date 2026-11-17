@@ -1,0 +1,78 @@
+Node: clus08.hpc.local
+Nombre del modelo:                   Intel(R) Xeon(R) Gold 5416S
+Configuració: P=6 map-by=socket bind-to=core
+mpirun -np 6 --report-bindings --map-by socket --bind-to core
+[clus08.hpc.local:2460805] MCW rank 2 bound to socket 0[core 1[hwt 0-1]]: [../BB/../../../../../../../../../../../../../..][../../../../../../../../../../../../../../../..]
+[clus08.hpc.local:2460805] MCW rank 3 bound to socket 1[core 17[hwt 0-1]]: [../../../../../../../../../../../../../../../..][../BB/../../../../../../../../../../../../../..]
+[clus08.hpc.local:2460805] MCW rank 4 bound to socket 0[core 2[hwt 0-1]]: [../../BB/../../../../../../../../../../../../..][../../../../../../../../../../../../../../../..]
+[clus08.hpc.local:2460805] MCW rank 5 bound to socket 1[core 18[hwt 0-1]]: [../../../../../../../../../../../../../../../..][../../BB/../../../../../../../../../../../../..]
+[clus08.hpc.local:2460805] MCW rank 0 bound to socket 0[core 0[hwt 0-1]]: [BB/../../../../../../../../../../../../../../..][../../../../../../../../../../../../../../../..]
+[clus08.hpc.local:2460805] MCW rank 1 bound to socket 1[core 16[hwt 0-1]]: [../../../../../../../../../../../../../../../..][BB/../../../../../../../../../../../../../../..]
+
+Training...
+Epoch 0 Loss: 0.363915
+Epoch 1 Loss: 0.325798
+Epoch 2 Loss: 0.245894
+Epoch 3 Loss: 0.105513
+Epoch 4 Loss: 0.053917
+Epoch 5 Loss: 0.031724
+Epoch 6 Loss: 0.025752
+Epoch 7 Loss: 0.018428
+Epoch 8 Loss: 0.013696
+Epoch 9 Loss: 0.011667
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.632858 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.641035 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.642056 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.642572 sec)
+
+
+
+Goodbye! (3.642948 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.653378 sec)
+
+PROFILE P=6
+PROFILE fase            min        avg        max
+PROFILE load         0.0063     0.0067     0.0073
+PROFILE compute      1.7523     1.8447     2.0134
+PROFILE wait         0.0081     0.1846     0.2807
+PROFILE comm         1.1933     1.1935     1.1938
+PROFILE update       0.0871     0.0941     0.1014
+PROFILE test         0.3089     0.3182     0.3294

@@ -1,0 +1,78 @@
+Node: clus07.hpc.local
+Nombre del modelo:                   Intel(R) Xeon(R) Gold 5416S
+Configuració: P=6 map-by=core bind-to=none
+mpirun -np 6 --report-bindings --map-by core --bind-to none
+[clus07.hpc.local:1858796] MCW rank 2 is not bound (or bound to all available processors)
+[clus07.hpc.local:1858795] MCW rank 1 is not bound (or bound to all available processors)
+[clus07.hpc.local:1858801] MCW rank 5 is not bound (or bound to all available processors)
+[clus07.hpc.local:1858794] MCW rank 0 is not bound (or bound to all available processors)
+[clus07.hpc.local:1858797] MCW rank 3 is not bound (or bound to all available processors)
+[clus07.hpc.local:1858799] MCW rank 4 is not bound (or bound to all available processors)
+
+Training...
+Epoch 0 Loss: 0.363915
+Epoch 1 Loss: 0.325798
+Epoch 2 Loss: 0.245894
+Epoch 3 Loss: 0.105513
+Epoch 4 Loss: 0.053917
+Epoch 5 Loss: 0.031724
+Epoch 6 Loss: 0.025752
+Epoch 7 Loss: 0.018428
+Epoch 8 Loss: 0.013696
+Epoch 9 Loss: 0.011667
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.858136 sec)
+
+
+
+Goodbye! (3.867102 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.882136 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.881525 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.871456 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (3.885207 sec)
+
+PROFILE P=6
+PROFILE fase            min        avg        max
+PROFILE load         0.0078     0.0098     0.0129
+PROFILE compute      1.8372     1.9552     2.0983
+PROFILE wait         0.0673     0.2016     0.3142
+PROFILE comm         1.2916     1.2921     1.2924
+PROFILE update       0.0957     0.0993     0.1045
+PROFILE test         0.3106     0.3157     0.3207

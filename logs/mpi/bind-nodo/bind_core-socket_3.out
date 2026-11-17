@@ -1,0 +1,78 @@
+Node: clus11.hpc.local
+Nombre del modelo:                   AMD Opteron(tm) Processor 4180
+Configuració: P=6 map-by=core bind-to=socket
+mpirun -np 6 --report-bindings --map-by core --bind-to socket
+[clus11.hpc.local:3640864] MCW rank 0 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]]: [B/B/B/B/B/B][./././././.]
+[clus11.hpc.local:3640864] MCW rank 1 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]]: [B/B/B/B/B/B][./././././.]
+[clus11.hpc.local:3640864] MCW rank 2 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]]: [B/B/B/B/B/B][./././././.]
+[clus11.hpc.local:3640864] MCW rank 3 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]]: [B/B/B/B/B/B][./././././.]
+[clus11.hpc.local:3640864] MCW rank 4 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]]: [B/B/B/B/B/B][./././././.]
+[clus11.hpc.local:3640864] MCW rank 5 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]]: [B/B/B/B/B/B][./././././.]
+
+Training...
+Epoch 0 Loss: 0.363880
+Epoch 1 Loss: 0.352025
+Epoch 2 Loss: 0.139981
+Epoch 3 Loss: 0.061629
+Epoch 4 Loss: 0.040355
+Epoch 5 Loss: 0.025882
+Epoch 6 Loss: 0.020899
+Epoch 7 Loss: 0.016357
+Epoch 8 Loss: 0.013044
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+Epoch 9 Loss: 0.010881
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (26.228676 sec)
+
+
+
+Goodbye! (26.236810 sec)
+
+
+
+Goodbye! (26.252955 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (26.244718 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (26.242465 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (26.237093 sec)
+
+PROFILE P=6
+PROFILE fase            min        avg        max
+PROFILE load         0.0185     0.0230     0.0294
+PROFILE compute     14.2122    14.6435    15.4127
+PROFILE wait         0.0125     0.7825     1.2020
+PROFILE comm         6.8842     6.8847     6.8854
+PROFILE update       2.5403     2.5611     2.5736
+PROFILE test         1.3392     1.3420     1.3471
