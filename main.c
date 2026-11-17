@@ -38,12 +38,17 @@ int size = 1;
  *   compute feed_input + forward_prop + compute_loss + back_prop dels patrons propis
  *   wait    MPI_Barrier abans de la reducció: temps esperant els processos més lents
  *   comm    MPI_Allreduce dels gradients (amb tots ja sincronitzats: cost de la comunicació)
+ *   comm_dw0   part de comm: només l'Allreduce del dw de la capa 0 (512.000 floats, 2,05 MB)
+ *   comm_rest  part de comm: les altres 7 crides (dw capes 1-3 i tots els dbias, 0,54 MB)
  *   update  init_deltas + update_weights (feina repetida a tots els processos)
  *   test    test_nn complet
+ * comm_dw0 + comm_rest ≈ comm. Si comm_rest és gran, pesa el cost fix de cada crida
+ * (ajuntar-les en una sola ajudaria); si el temps és a comm_dw0, pesa el volum de dades.
  * Sense -DPROFILE les macros queden buides i el codi és idèntic a la versió normal. */
 #ifdef PROFILE
-enum { T_LOAD, T_COMPUTE, T_WAIT, T_COMM, T_UPDATE, T_TEST, T_NUM };
-static const char* t_names[T_NUM] = {"load", "compute", "wait", "comm", "update", "test"};
+enum { T_LOAD, T_COMPUTE, T_WAIT, T_COMM, T_COMM_DW0, T_COMM_REST, T_UPDATE, T_TEST, T_NUM };
+static const char* t_names[T_NUM] = {"load", "compute", "wait", "comm", "comm_dw0",
+                                     "comm_rest", "update", "test"};
 static double t_acc[T_NUM] = {0};
 #define TIC(v) double v = MPI_Wtime()
 #define TOC(fase, v) t_acc[fase] += MPI_Wtime() - (v)
@@ -159,10 +164,16 @@ void train_neural_net() {
             for (int l = 0; l < num_layers - 1; l++) {
                 int nw = num_neurons[l + 1] * num_neurons[l];
                 int nbias = num_neurons[l + 1];
+
+                TIC(t_cdw);
                 MPI_Allreduce(MPI_IN_PLACE, lay[l].dw, nw, MPI_FLOAT,
                               MPI_SUM, MPI_COMM_WORLD);
+                TOC(l == 0 ? T_COMM_DW0 : T_COMM_REST, t_cdw);  // dw capa 0 a part
+
+                TIC(t_cdb);
                 MPI_Allreduce(MPI_IN_PLACE, lay[l + 1].dbias, nbias, MPI_FLOAT,
                               MPI_SUM, MPI_COMM_WORLD);
+                TOC(T_COMM_REST, t_cdb);
             }
             TOC(T_COMM, t_comm);
 
@@ -219,9 +230,9 @@ static void print_profile(void) {
 
     if (rank == 0) {
         printf("PROFILE P=%d\n", size);
-        printf("PROFILE %-8s %10s %10s %10s\n", "fase", "min", "avg", "max");
+        printf("PROFILE %-9s %10s %10s %10s\n", "fase", "min", "avg", "max");
         for (int f = 0; f < T_NUM; f++)
-            printf("PROFILE %-8s %10.4f %10.4f %10.4f\n", t_names[f], t_min[f],
+            printf("PROFILE %-9s %10.4f %10.4f %10.4f\n", t_names[f], t_min[f],
                    t_sum[f] / size, t_max[f]);
     }
 }
