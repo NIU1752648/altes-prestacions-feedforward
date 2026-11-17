@@ -1,0 +1,31 @@
+#!/bin/bash
+#SBATCH -N 1                # Nombre de nodes
+#SBATCH -n 12               # Valor per defecte (si no s'indica el contrari)
+#SBATCH --exclusive
+#SBATCH --partition=new-nodo.q
+
+# Job per a new-nodo.q (Intel Xeon Gold 5416S: 2 sockets x 16 nuclis, hyperthreading,
+# L3 de 30 MB per socket).
+# Ús: sbatch [--ntasks=P] MPI_new-nodo.sub <id> <processos> [flags]
+#
+# Col·locació: la per defecte d'OpenMPI.
+#   A les proves de logs/mpi/bind-new-nodo/ (P=6) les diferències entre
+#   configuracions són petites (3,7-4,2 s), així que no es força cap opció.
+#   --report-bindings deixa constància de com s'han col·locat els processos.
+
+module load gcc/13.2.1
+module load openmpi/4.1.1
+
+# Quin node i quin processador ens ha tocat
+echo "Node: $(hostname)"
+lscpu | grep -E "Model name|Nombre del modelo"
+
+# Tercer argument opcional: flags extra (p. ex. -DPROFILE per a la instrumentació de temps)
+mpicc -Ofast -march=native -fopt-info-vec-optimized ${3} main.c common/common.c configuration/config.c layer/layer.c randomizer/randomizer.c initialize/initialize.c training/training.c -o exec$1 -lm
+
+echo "Compilat correctament per a ${2} processos"
+
+# --report-bindings escriu a stderr; SLURM el desa al mateix .out
+perf stat mpirun -np ${2} --report-bindings ./exec$1 configuration/configfile.txt
+
+rm ./exec$1

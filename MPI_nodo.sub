@@ -1,0 +1,31 @@
+#!/bin/bash
+#SBATCH -N 1                # Nombre de nodes
+#SBATCH -n 12               # Valor per defecte (si no s'indica el contrari)
+#SBATCH --exclusive
+#SBATCH --partition=nodo.q
+
+# Job per a nodo.q (AMD Opteron 4180: 2 sockets x 6 nuclis, L3 de 6 MB per socket).
+# Ús: sbatch [--ntasks=P] MPI_nodo.sub <id> <processos> [flags]
+#
+# Col·locació: --map-by socket --bind-to core
+#   Les proves de logs/mpi/bind-nodo/ (P=6) mostren que posar tots els processos
+#   al mateix socket fa el programa un 44% més lent (comparteixen L3 i controlador
+#   de memòria). Repartint entre sockets i fixant cada procés al seu nucli, la
+#   col·locació és sempre la mateixa sigui quin sigui P.
+
+module load gcc/13.2.1
+module load openmpi/4.1.1
+
+# Quin node i quin processador ens ha tocat
+echo "Node: $(hostname)"
+lscpu | grep -E "Model name|Nombre del modelo"
+
+# Tercer argument opcional: flags extra (p. ex. -DPROFILE per a la instrumentació de temps)
+mpicc -Ofast -march=native -fopt-info-vec-optimized ${3} main.c common/common.c configuration/config.c layer/layer.c randomizer/randomizer.c initialize/initialize.c training/training.c -o exec$1 -lm
+
+echo "Compilat correctament per a ${2} processos"
+
+# --report-bindings escriu a stderr; SLURM el desa al mateix .out
+perf stat mpirun -np ${2} --map-by socket --bind-to core --report-bindings ./exec$1 configuration/configfile.txt
+
+rm ./exec$1
