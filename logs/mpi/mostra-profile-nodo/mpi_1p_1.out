@@ -1,0 +1,72 @@
+main.c:111:23: optimized: loop vectorized using 16 byte vectors
+main.c:199:27: optimized: loop vectorized using 16 byte vectors
+main.c:199:27: optimized:  loop versioned for vectorization because of possible aliasing
+main.c:199:27: optimized: loop vectorized using 8 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 16 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:29:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:29:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:29:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:103:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:146:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:138:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:138:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:138:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:193:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:193:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:193:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:188:31: optimized: loop vectorized using 16 byte vectors
+training/training.c:188:31: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:188:31: optimized: loop vectorized using 8 byte vectors
+Compilat correctament per a 1 processos
+
+Training...
+Epoch 0 Loss: 0.363908
+Epoch 1 Loss: 0.357409
+Epoch 2 Loss: 0.147380
+Epoch 3 Loss: 0.061898
+Epoch 4 Loss: 0.039837
+Epoch 5 Loss: 0.026030
+Epoch 6 Loss: 0.022047
+Epoch 7 Loss: 0.016594
+Epoch 8 Loss: 0.012993
+Epoch 9 Loss: 0.011011
+
+Testing...
+
+Total encerts = 929 (/946) 
+
+
+Goodbye! (42.292149 sec)
+
+PROFILE P=1
+PROFILE fase            min        avg        max
+PROFILE load         0.0193     0.0193     0.0193
+PROFILE compute     40.9075    40.9075    40.9075
+PROFILE wait         0.0002     0.0002     0.0002
+PROFILE comm         0.0007     0.0007     0.0007
+PROFILE update       0.3674     0.3674     0.3674
+PROFILE test         0.9952     0.9952     0.9952
+
+ Performance counter stats for 'mpirun -np 1 ./exec1p_1 configuration/configfile.txt':
+
+         42.651,30 msec task-clock:u              #    0,972 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+            22.813      page-faults:u             #  534,872 /sec                   
+   108.807.844.767      cycles:u                  #    2,551 GHz                      (66,65%)
+       521.407.786      stalled-cycles-frontend:u #    0,48% frontend cycles idle     (66,68%)
+    39.585.250.678      stalled-cycles-backend:u  #   36,38% backend cycles idle      (66,68%)
+   203.231.220.434      instructions:u            #    1,87  insn per cycle         
+                                                  #    0,19  stalled cycles per insn  (66,68%)
+    25.450.568.745      branches:u                #  596,713 M/sec                    (66,67%)
+        44.566.929      branch-misses:u           #    0,18% of all branches          (66,64%)
+
+      43,859517425 seconds time elapsed
+
+      41,889319000 seconds user
+       0,204516000 seconds sys
+
+

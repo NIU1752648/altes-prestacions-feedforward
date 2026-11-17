@@ -1,0 +1,130 @@
+Compilat correctament per a 12 processos
+
+Training...
+Epoch 0 Loss: 0.363883
+Epoch 1 Loss: 0.356447
+Epoch 2 Loss: 0.140748
+Epoch 3 Loss: 0.060123
+Epoch 4 Loss: 0.039875
+Epoch 5 Loss: 0.025777
+Epoch 6 Loss: 0.021337
+Epoch 7 Loss: 0.016409
+Epoch 8 Loss: 0.012788
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+Epoch 9 Loss: 0.010845
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (20.906435 sec)
+
+
+
+Goodbye! (20.899996 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (20.908645 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (20.902944 sec)
+
+
+
+Goodbye! (20.907681 sec)
+
+
+
+Goodbye! (20.909313 sec)
+
+
+
+Goodbye! (20.902260 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (20.902699 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (20.910217 sec)
+
+
+
+Goodbye! (20.910992 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (20.904836 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (20.906893 sec)
+
+
+ Performance counter stats for 'mpirun -np 12 ./exec12p_1 configuration/configfile.txt':
+
+        254.722,63 msec task-clock:u                     #   11,268 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+           187.336      page-faults:u                    #  735,451 /sec                      
+   443.992.539.746      cycles:u                         #    1,743 GHz                         (66,67%)
+     8.623.163.863      stalled-cycles-frontend:u        #    1,94% frontend cycles idle        (66,67%)
+   309.135.674.593      stalled-cycles-backend:u         #   69,63% backend cycles idle         (66,66%)
+   348.900.169.334      instructions:u                   #    0,79  insn per cycle            
+                                                  #    0,89  stalled cycles per insn     (66,67%)
+    48.999.306.576      branches:u                       #  192,363 M/sec                       (66,67%)
+       356.171.098      branch-misses:u                  #    0,73% of all branches             (66,67%)
+
+      22,605464024 seconds time elapsed
+
+     173,836712000 seconds user
+      74,688920000 seconds sys
+
+

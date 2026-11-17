@@ -1,0 +1,112 @@
+main.c:111:23: optimized: loop vectorized using 16 byte vectors
+main.c:199:27: optimized: loop vectorized using 16 byte vectors
+main.c:199:27: optimized:  loop versioned for vectorization because of possible aliasing
+main.c:199:27: optimized: loop vectorized using 8 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 16 byte vectors
+common/common.c:37:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:29:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:29:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:29:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:103:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:146:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:146:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:138:23: optimized: loop vectorized using 16 byte vectors
+training/training.c:138:23: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:138:23: optimized: loop vectorized using 8 byte vectors
+training/training.c:193:27: optimized: loop vectorized using 16 byte vectors
+training/training.c:193:27: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:193:27: optimized: loop vectorized using 8 byte vectors
+training/training.c:188:31: optimized: loop vectorized using 16 byte vectors
+training/training.c:188:31: optimized:  loop versioned for vectorization because of possible aliasing
+training/training.c:188:31: optimized: loop vectorized using 8 byte vectors
+Compilat correctament per a 6 processos
+
+Training...
+Epoch 0 Loss: 0.363880
+Epoch 1 Loss: 0.352025
+Epoch 2 Loss: 0.139981
+Epoch 3 Loss: 0.061629
+Epoch 4 Loss: 0.040355
+Epoch 5 Loss: 0.025882
+Epoch 6 Loss: 0.020899
+Epoch 7 Loss: 0.016357
+Epoch 8 Loss: 0.013044
+Epoch 9 Loss: 0.010881
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (19.459868 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (19.633572 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (19.644690 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (19.662739 sec)
+
+
+
+Goodbye! (19.655499 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (19.669092 sec)
+
+PROFILE P=6
+PROFILE fase            min        avg        max
+PROFILE load         0.0180     0.0186     0.0198
+PROFILE compute     10.4710    10.9401    11.6888
+PROFILE wait         0.0143     0.7770     1.2751
+PROFILE comm         5.4271     5.4279     5.4286
+PROFILE update       1.2374     1.2655     1.2854
+PROFILE test         1.0278     1.1891     1.2345
+
+ Performance counter stats for 'mpirun -np 6 ./exec6p_2 configuration/configfile.txt':
+
+        119.912,86 msec task-clock:u                     #    5,638 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+            97.876      page-faults:u                    #  816,226 /sec                      
+   237.190.471.781      cycles:u                         #    1,978 GHz                         (66,66%)
+     3.954.257.736      stalled-cycles-frontend:u        #    1,67% frontend cycles idle        (66,65%)
+   144.301.664.202      stalled-cycles-backend:u         #   60,84% backend cycles idle         (66,67%)
+   254.175.252.983      instructions:u                   #    1,07  insn per cycle            
+                                                  #    0,57  stalled cycles per insn     (66,67%)
+    33.418.460.828      branches:u                       #  278,690 M/sec                       (66,67%)
+       147.332.185      branch-misses:u                  #    0,44% of all branches             (66,68%)
+
+      21,270152939 seconds time elapsed
+
+      92,864970000 seconds user
+      24,345955000 seconds sys
+
+

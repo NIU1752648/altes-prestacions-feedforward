@@ -1,0 +1,82 @@
+Compilat correctament per a 6 processos
+
+Training...
+Epoch 0 Loss: 0.363880
+Epoch 1 Loss: 0.352025
+Epoch 2 Loss: 0.139981
+Epoch 3 Loss: 0.061629
+Epoch 4 Loss: 0.040355
+Epoch 5 Loss: 0.025882
+Epoch 6 Loss: 0.020899
+Epoch 7 Loss: 0.016357
+Epoch 8 Loss: 0.013044
+Epoch 9 Loss: 0.010881
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.657281 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.691116 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.705562 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.720842 sec)
+
+
+
+Goodbye! (18.711778 sec)
+
+
+
+Goodbye! (18.712758 sec)
+
+
+ Performance counter stats for 'mpirun -np 6 ./exec6p_1 configuration/configfile.txt':
+
+        114.240,06 msec task-clock:u                     #    5,623 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+            91.080      page-faults:u                    #  797,268 /sec                      
+   226.825.714.938      cycles:u                         #    1,986 GHz                         (50,01%)
+     3.937.399.907      stalled-cycles-frontend:u        #    1,74% frontend cycles idle        (50,00%)
+   132.271.063.113      stalled-cycles-backend:u         #   58,31% backend cycles idle         (50,01%)
+   260.361.966.258      instructions:u                   #    1,15  insn per cycle            
+                                                  #    0,51  stalled cycles per insn     (50,00%)
+    34.704.752.875      branches:u                       #  303,788 M/sec                       (50,00%)
+       139.807.018      branch-misses:u                  #    0,40% of all branches             (50,00%)
+
+      20,317129406 seconds time elapsed
+
+      88,336968000 seconds user
+      23,230025000 seconds sys
+
+

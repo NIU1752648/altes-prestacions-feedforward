@@ -1,0 +1,82 @@
+Compilat correctament per a 6 processos
+
+Training...
+Epoch 0 Loss: 0.363880
+Epoch 1 Loss: 0.352025
+Epoch 2 Loss: 0.139981
+Epoch 3 Loss: 0.061629
+Epoch 4 Loss: 0.040355
+Epoch 5 Loss: 0.025882
+Epoch 6 Loss: 0.020899
+Epoch 7 Loss: 0.016357
+Epoch 8 Loss: 0.013044
+Epoch 9 Loss: 0.010881
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.846643 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.858393 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.869329 sec)
+
+
+Total encerts = 928 (/946) 
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.880816 sec)
+
+
+
+Goodbye! (18.874698 sec)
+
+
+Total encerts = 928 (/946) 
+
+
+Goodbye! (18.877493 sec)
+
+
+ Performance counter stats for 'mpirun -np 6 ./exec6p_2 configuration/configfile.txt':
+
+        115.243,89 msec task-clock:u              #    5,629 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+            90.240      page-faults:u             #  783,035 /sec                   
+   228.409.476.487      cycles:u                  #    1,982 GHz                      (66,67%)
+     4.063.049.439      stalled-cycles-frontend:u #    1,78% frontend cycles idle     (66,67%)
+   133.541.609.928      stalled-cycles-backend:u  #   58,47% backend cycles idle      (66,67%)
+   260.682.065.130      instructions:u            #    1,14  insn per cycle         
+                                                  #    0,51  stalled cycles per insn  (66,66%)
+    34.734.841.751      branches:u                #  301,403 M/sec                    (66,66%)
+       143.189.333      branch-misses:u           #    0,41% of all branches          (66,67%)
+
+      20,473289109 seconds time elapsed
+
+      88,889098000 seconds user
+      23,546991000 seconds sys
+
+

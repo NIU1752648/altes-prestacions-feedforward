@@ -1,0 +1,66 @@
+Compilat correctament per a 4 processos
+
+Training...
+Epoch 0 Loss: 0.363925
+Epoch 1 Loss: 0.324895
+Epoch 2 Loss: 0.162563
+Epoch 3 Loss: 0.102271
+Epoch 4 Loss: 0.067281
+Epoch 5 Loss: 0.033817
+Epoch 6 Loss: 0.024928
+Epoch 7 Loss: 0.017863
+Epoch 8 Loss: 0.013479
+Epoch 9 Loss: 0.011191
+
+Testing...
+
+Testing...
+
+Testing...
+
+Testing...
+
+Total encerts = 929 (/946) 
+
+Total encerts = 929 (/946) 
+
+
+Goodbye! (19.087954 sec)
+
+
+
+Goodbye! (19.084509 sec)
+
+
+Total encerts = 929 (/946) 
+
+Total encerts = 929 (/946) 
+
+
+Goodbye! (19.088446 sec)
+
+
+
+Goodbye! (19.093644 sec)
+
+
+ Performance counter stats for 'mpirun -np 4 ./exec4p_1 configuration/configfile.txt':
+
+         77.675,72 msec task-clock:u                     #    3,757 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+            62.231      page-faults:u                    #  801,164 /sec                      
+   175.288.547.583      cycles:u                         #    2,257 GHz                         (66,66%)
+     3.201.982.959      stalled-cycles-frontend:u        #    1,83% frontend cycles idle        (66,67%)
+    93.202.691.157      stalled-cycles-backend:u         #   53,17% backend cycles idle         (66,66%)
+   231.102.517.546      instructions:u                   #    1,32  insn per cycle            
+                                                  #    0,40  stalled cycles per insn     (66,66%)
+    29.933.548.135      branches:u                       #  385,366 M/sec                       (66,68%)
+        74.376.056      branch-misses:u                  #    0,25% of all branches             (66,67%)
+
+      20,673189157 seconds time elapsed
+
+      67,571627000 seconds user
+       8,429862000 seconds sys
+
+
