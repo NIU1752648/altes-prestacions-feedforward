@@ -9,7 +9,8 @@ module load gcc/13.2.1
 module load openmpi/4.1.1
 
 # Compilació amb mpicc
-mpicc -Ofast -march=native -fno-tree-vectorize -fopt-info-vec-optimized main.c common/common.c configuration/config.c layer/layer.c randomizer/randomizer.c initialize/initialize.c training/training.c -o exec$1 -lm
+# Tercer argument opcional: flags extra (p. ex. -DPROFILE per a la instrumentació de temps)
+mpicc -Ofast -march=native -fopt-info-vec-optimized ${3} main.c common/common.c configuration/config.c layer/layer.c randomizer/randomizer.c initialize/initialize.c training/training.c -o exec$1 -lm
 
 echo "Compilat correctament per a ${2} processos"
 

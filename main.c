@@ -32,6 +32,26 @@
 int rank = 0;
 int size = 1;
 
+/* PROFILE: instrumentació de temps per procés (compilar amb -DPROFILE).
+ * Fases que es mesuren:
+ *   load    càrrega del dataset d'entrenament
+ *   compute feed_input + forward_prop + compute_loss + back_prop dels patrons propis
+ *   wait    MPI_Barrier abans de la reducció: temps esperant els processos més lents
+ *   comm    MPI_Allreduce dels gradients (amb tots ja sincronitzats: cost de la comunicació)
+ *   update  init_deltas + update_weights (feina repetida a tots els processos)
+ *   test    test_nn complet
+ * Sense -DPROFILE les macros queden buides i el codi és idèntic a la versió normal. */
+#ifdef PROFILE
+enum { T_LOAD, T_COMPUTE, T_WAIT, T_COMM, T_UPDATE, T_TEST, T_NUM };
+static const char* t_names[T_NUM] = {"load", "compute", "wait", "comm", "update", "test"};
+static double t_acc[T_NUM] = {0};
+#define TIC(v) double v = MPI_Wtime()
+#define TOC(fase, v) t_acc[fase] += MPI_Wtime() - (v)
+#else
+#define TIC(v)
+#define TOC(fase, v)
+#endif
+
 //-----------FREE INPUT------------
 void freeInput(int np, char** input) {
     for (int i = 0; i < np; i++)
@@ -78,11 +98,13 @@ void printRecognized(int p, layer Output) {
 void train_neural_net() {
     if (rank == 0) printf("\nTraining...\n");
 
+    TIC(t_load);
     if ((input = loadPatternSet(num_training_patterns, dataset_training_path,
                                 1)) == NULL) {
         printf("Loading Patterns: Error!!\n");
         exit(-1);
     }
+    TOC(T_LOAD, t_load);
 
     int ranpat[num_training_patterns];
 
@@ -105,10 +127,13 @@ void train_neural_net() {
         // queda igual a tots sense comunicar res.
 
         for (int nb = 0; nb < num_training_patterns/batch_size; nb++) {
+            TIC(t_init);
             init_deltas();
+            TOC(T_UPDATE, t_init);
 
             // MPI: repartiment cíclic dels patrons del batch. El procés 'rank'
             // fa els patrons rank, rank+size, rank+2*size... del batch.
+            TIC(t_comp);
             for (int i = nb*batch_size + rank; i < (nb+1)*batch_size; i += size) {
                 int p = ranpat[i];
 
@@ -117,6 +142,15 @@ void train_neural_net() {
                 loss += compute_loss(p);   // loss local d'aquest procés
                 back_prop(p);              // gradient parcial local
             }
+            TOC(T_COMPUTE, t_comp);
+
+#ifdef PROFILE
+            // Separa l'espera pels processos lents del cost real de l'Allreduce
+            TIC(t_wait);
+            MPI_Barrier(MPI_COMM_WORLD);
+            TOC(T_WAIT, t_wait);
+#endif
+            TIC(t_comm);
 
             // MPI: suma dels gradients parcials de tots els processos.
             // dw de la capa l té num_neurons[l+1] x num_neurons[l] elements.
@@ -130,9 +164,12 @@ void train_neural_net() {
                 MPI_Allreduce(MPI_IN_PLACE, lay[l + 1].dbias, nbias, MPI_FLOAT,
                               MPI_SUM, MPI_COMM_WORLD);
             }
+            TOC(T_COMM, t_comm);
 
             // Tots els processos tenen el mateix gradient: apliquen el mateix canvi
+            TIC(t_upd);
             update_weights();
+            TOC(T_UPDATE, t_upd);
         }
 
         // MPI: loss de tot l'epoch (una reducció per epoch, només per imprimir)
@@ -170,6 +207,26 @@ void test_nn() {
     freeInput(num_test_patterns, rSet);
 }
 
+#ifdef PROFILE
+/* Recull els temps de tots els processos al rank 0 i imprimeix, per fase,
+ * el mínim, la mitjana i el màxim entre processos (en segons).
+ * Format pensat per filtrar amb: grep '^PROFILE' */
+static void print_profile(void) {
+    double t_min[T_NUM], t_max[T_NUM], t_sum[T_NUM];
+    MPI_Reduce(t_acc, t_min, T_NUM, MPI_DOUBLE, MPI_MIN, 0, MPI_COMM_WORLD);
+    MPI_Reduce(t_acc, t_max, T_NUM, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+    MPI_Reduce(t_acc, t_sum, T_NUM, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+
+    if (rank == 0) {
+        printf("PROFILE P=%d\n", size);
+        printf("PROFILE %-8s %10s %10s %10s\n", "fase", "min", "avg", "max");
+        for (int f = 0; f < T_NUM; f++)
+            printf("PROFILE %-8s %10.4f %10.4f %10.4f\n", t_names[f], t_min[f],
+                   t_sum[f] / size, t_max[f]);
+    }
+}
+#endif
+
 //-----------MAIN-----------//
 int main(int argc, char** argv) {
     MPI_Init(&argc, &argv);
@@ -200,7 +257,9 @@ int main(int argc, char** argv) {
     train_neural_net();
 
     // Test
+    TIC(t_test);
     test_nn();
+    TOC(T_TEST, t_test);
 
     // Stop measuring time and calculate the elapsed time
     double elapsed = elapsedT(begin);
@@ -209,6 +268,10 @@ int main(int argc, char** argv) {
         printf("Error in Dinitialization...\n");
 
     printf("\n\nGoodbye! (%f sec)\n\n", elapsed);
+
+#ifdef PROFILE
+    print_profile();
+#endif
 
     MPI_Finalize();
     return 0;
